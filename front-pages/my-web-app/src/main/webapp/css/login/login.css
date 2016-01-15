@@ -1,0 +1,101 @@
+@charset "utf-8";
+/*
+  @名称：login.css
+  @作者：ZhaoYue
+  @时间：2014-03-27
+  @功能：1、登陆页样式
+*/
+
+
+/* 1、登陆页样式 */
+.login_header {
+	height: 110px;
+	background: url(../../images/login/header_bg.png);
+}
+
+.logo{
+	float: left;
+	display: inline;
+	margin-left: 40px;
+	margin-top: 28px;
+}
+
+.login_main {
+	height: 400px;
+	background: url(../../images/login/banner1_bg.png);
+}
+.login_info {
+	position: absolute;
+	overflow: hidden;
+	z-index: 99;
+	right: 60px;
+	top: 40px;
+	width: 308px;
+	height: 315px;
+	background: url(../../images/login/login_info_bg.png);
+}
+.login_info_user {
+	margin: 62px 0 0 71px;
+	width: 192px;
+	height: 38px;
+	font-size:12px;
+	line-height: 38px;
+	border: none;
+	font-size: 20px;
+}
+.login_info_pw {
+	margin: 18px 0 0 71px;
+	width: 192px;
+	height: 38px;
+	font-size:12px;
+	line-height: 38px;
+	border: none;
+	font-size: 20px;
+}
+.login_info_vc {
+	margin: 16px 0 0 71px;
+	width: 118px;
+	height: 38px;
+	font-size:12px;
+	line-height: 38px;
+	border: none;
+	font-size: 20px;
+}
+
+.login_info_vc_img {
+	margin: 0px 0 0 2px;
+	width: 70px;
+	height: 38px;
+	line-height: 38px;
+	border: none;
+	vertical-align: bottom;
+}
+
+.login_footer {
+	overflow: hidden;
+	min-height: 300px;
+	background: url(../../images/login/footer_bg.png);
+}
+
+/* 按钮样式 */
+.btn_blue {
+    width: 237px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background: url(../../images/login/btn.png);
+}
+.btn_blue:hover {
+    background-position: 0 -50px;
+}
+.btn_blue:active {
+    background-position: 0 0;
+}
+
+/* 文字样式 */
+.color_gray, a.color_gray {
+    color: #818181;
+}

@@ -1,0 +1,47 @@
+/**
+* this is extends ligerui-icons.css
+* malq
+* 2012-08-15
+*/
+.l-icon{ width:16px; height:16px; overflow:hidden;}
+.l-icon-import{ background:url('../../images/icons/import.gif') no-repeat center;}
+.l-icon-export{ background:url('../../images/icons/export.gif') no-repeat center;}
+.l-icon-handle{ background:url('../../images/icons/handle.png') no-repeat center;}
+.l-icon-bindingterminal{ background:url('../../images/icons/bindingterminal.png') no-repeat center;}
+.l-icon-chongzhi{ background:url('../../images/icons/chongzhi.png') no-repeat center;}
+.l-icon-chuli{ background:url('../../images/icons/chuli.png') no-repeat center;}
+.l-icon-daokuanqueren{ background:url('../../images/icons/daokuanqueren.png') no-repeat center;}
+.l-icon-fabu{ background:url('../../images/icons/fabu.png') no-repeat center;}
+.l-icon-fapiao{ background:url('../../images/icons/fapiao.png') no-repeat center;}
+.l-icon-fenpeidiqu{ background:url('../../images/icons/fenpeidiqu.png') no-repeat center;}
+.l-icon-guashi{ background:url('../../images/icons/guashi.png') no-repeat center;}
+.l-icon-huanka{ background:url('../../images/icons/huanka.png') no-repeat center;}
+.l-icon-jihuo{ background:url('../../images/icons/jihuo.png') no-repeat center;}
+.l-icon-jiegua{ background:url('../../images/icons/jiegua.png') no-repeat center;}
+.l-icon-jiesuo{ background:url('../../images/icons/jiesuo.png') no-repeat center;}
+.l-icon-kaika{ background:url('../../images/icons/kaika.png') no-repeat center;}
+.l-icon-customersearch{ background:url('../../images/icons/customersearch.png') no-repeat center;}
+.l-icon-cardimport{ background:url('../../images/icons/cardimport.png') no-repeat center;}
+.l-icon-listcannel{ background:url('../../images/icons/listcannel.png') no-repeat center;}
+.l-icon-bactchdelete{ background:url('../../images/icons/bactchdelete.png') no-repeat center;}
+.l-icon-quxiaotuijian{ background:url('../../images/icons/quxiaotuijian.png') no-repeat center;}
+.l-icon-rengongtiaozheng{ background:url('../../images/icons/rengongtiaozheng.png') no-repeat center;}
+.l-icon-saoraodianhua{ background:url('../../images/icons/saoraodianhua.png') no-repeat center;}
+.l-icon-delete2{ background:url('../../images/icons/delete2.png') no-repeat center;}
+.l-icon-deletepic{ background:url('../../images/icons/deletepic.png') no-repeat center;}
+.l-icon-upload{ background:url('../../images/icons/upload.png') no-repeat center;}
+.l-icon-uploadpic{ background:url('../../images/icons/uploadpic.png') no-repeat center;}
+.l-icon-shenhe{ background:url('../../images/icons/shenhe.png') no-repeat center;}
+.l-icon-shenhe2{ background:url('../../images/icons/shenhe2.png') no-repeat center;}
+.l-icon-suoding{ background:url('../../images/icons/suoding.png') no-repeat center;}
+.l-icon-tuijian{ background:url('../../images/icons/tuijian.png') no-repeat center;}
+.l-icon-return{ background:url('../../images/icons/return.png') no-repeat center;}
+.l-icon-edit2{ background:url('../../images/icons/edit2.png') no-repeat center;}
+.l-icon-add2{ background:url('../../images/icons/add2.png') no-repeat center;}
+.l-icon-addnewcustomer{ background:url('../../images/icons/addnewcustomer.png') no-repeat center;}
+.l-icon-editpic{ background:url('../../images/icons/editpic.png') no-repeat center;}
+.l-icon-zhiliebiao{ background:url('../../images/icons/zhiliebiao.png') no-repeat center;}
+.l-icon-resetpassword{ background:url('../../images/icons/resetpassword.png') no-repeat center;}
+.l-icon-zhuanjiao{ background:url('../../images/icons/zhuanjiao.png') no-repeat center;}
+.l-icon-zhuanyi{ background:url('../../images/icons/zhuanyi.png') no-repeat center;}
+.l-icon-zuofei{ background:url('../../images/icons/zuofei.png') no-repeat center;}

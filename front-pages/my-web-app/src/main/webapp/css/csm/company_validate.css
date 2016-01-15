@@ -1,0 +1,192 @@
+/*   table tr td{      */
+/*     	border:1px solid;      */
+/*      }    */
+body {
+	font-size: 12px;
+}
+
+.text_background { /*文本框椭圆的背景图*/
+	background: url(../../images/186x27.png) no-repeat;
+	padding-left: 10px;
+	padding-top: 4px;
+	height: 29px;
+}
+.input_blur_green {/*文本框获取焦点时候的样式*/
+	background: url(../../images/186x27-green.png) no-repeat;
+	padding-left: 10px;
+	padding-top: 4px;
+	height: 29px;
+}
+.input_blur_red {/*文本框验证错误的时候*/
+	background: url(../../images/186x27-red.png) no-repeat;
+	padding-left: 10px;
+	padding-top: 4px;
+	height: 29px;
+}
+.select_background { /*下拉框方形的背景图*/
+	background: url(../../images/172x26-grey.png) no-repeat;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-top: 0px;
+	height: 29px;
+}
+
+.select_blur_green {/*下拉框获取焦点时候的样式*/
+	background: url(../../images/172x26-green.png) no-repeat;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-top: 0px;
+	height: 29px;
+}
+.select_blur_red {/*下拉框验证错误的时候*/
+	background: url(../../images/172x26-red.png) no-repeat;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-top: 0px;
+	height: 29px;
+}
+/* .input_transparent { 透明的文本框 */
+/* 	height: 25px; */
+/* 	width: 165px; */
+/* 	background: transparent; */
+/* 	border: 0px solid #ffffff; */
+/* } */
+.input_transparent { /*透明的文本框*/
+	height: 25px;
+	width: 165px;
+	background: url(../../images/kong.bmp) repeat-x fixed 0% 100%;
+	border: 0px solid #ffffff;
+}
+.span_warn_right { /*正确提示勾勾的样式*/
+	background: url(../../images/right.png) repeat-x;
+	padding-left: 16px;
+}
+
+.span_warn_wrong { /*错误提示叉叉的样式 */
+	background: url(../../images/wrong.png)  no-repeat;
+	padding-left: 19px;
+}
+
+.td_tip { /*温馨提示*/
+	padding-left: 150px;
+}
+
+.span_error { /*错误提示*/
+	color: #c00;
+}
+.span_red {
+	color: #c00;
+}
+
+.div_wrap {
+	width: 1100px; /*1100*/
+	border: 1px solid #666;
+	margin-top: 10px;
+	margin: auto auto;
+}
+
+.div_title {
+	background-color: #E4E4E4;
+	padding-left: 20px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.input_fold {
+	width: 80px;
+	height: 25px;
+	padding: 0;
+	margin: 0;
+	margin-top: 2px;
+	float: right;
+}
+
+.input_update {
+	width: 80px;
+	height: 25px;
+	float: right;
+	background-color: #E8F2FE;
+}
+
+.input_del {
+	width: 80px;
+	height: 25px;
+	float: right;
+	background-color: #E8F2FE;
+}
+
+.span_title {
+	font-style: normal;
+	font-family: 微软雅黑;
+	color: #333333;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+	margin-top: 4px;
+}
+
+.table_content {
+	width: 100%;
+	border: none;
+	border-collapse: collapse;
+}
+
+.table_content tr {
+	height: 25px;
+	line-height: 25px;
+}
+
+.table_content tr:hover {
+	background-color: #E8F2FE;
+}
+
+.table_content tr td.td_title {/*字段的td宽度*/
+	width: 179.33px;/*150*/
+	text-align: right;
+}
+
+.table_content tr td.td_content {/*文本内容的td宽度*/
+	width: 185.33px;/*200*/
+	text-align: left;
+}
+.table_content tr td.td_error {/*错误提示的td宽度*/
+	width: 185.33px;/*200*/
+	text-align: left;
+	padding-left: 10px;
+}
+
+.div_keepSpace {
+	height: 10px;
+}
+
+.span_999 {
+	color: #999;
+}
+
+.span_notNull {
+	font-size: 15px;
+	color: red;
+	padding-top: 15px;
+	margin-right: 5px;
+}
+
+.input_content { /*文本框的样式*/
+	width: 155px;
+	background-color: #FFFFEF;
+}
+
+.select_width { /*select下拉框的样式*/
+	background-color: #FFFFEF;
+	width: 80px;
+}
+
+.input_addr { /*详细地址的样式*/
+	background-color: #FFFFEF;
+	width: 230px;
+}
+
+.searchCardInput {
+	border: #999 1px solid;
+	height: 20px;
+	line-height: 20px;
+}

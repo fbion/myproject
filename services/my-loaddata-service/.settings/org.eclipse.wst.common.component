@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="my-loaddata-service">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/dao_src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/impl_src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="my-loaddata-interface-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/my-loaddata-interface/my-loaddata-interface">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="my-common-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/my-common/my-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="upp-security-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/upp-security/upp-security">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="vims-datacenter-interface-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/vims-datacenter-interface/vims-datacenter-interface">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="vims-common-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/vims-common/vims-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="yyzc-common-jar-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/yyzc-common-jar/yyzc-common-jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="yyzc-redis-support-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/yyzc-redis-support/yyzc-redis-support">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="vims-external-interface-1.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/vims-external-interface/vims-external-interface">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="vehicleLoadDataService"/>
+        <property name="java-output-path" value="/my-loaddata-service/target/classes"/>
+    </wb-module>
+</project-modules>

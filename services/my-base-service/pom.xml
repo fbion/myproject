@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sinoiov.my</groupId>
+		<artifactId>services</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<artifactId>my-base-service</artifactId>
+	<version>1.0.0</version>
+	<name>我的项目－基础服务</name>
+	<packaging>war</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.spring>3.2.4.RELEASE</version.spring>
+		<version.log4j>1.2.17</version.log4j>	
+		<version.mybatis>3.2.6</version.mybatis>  
+		<version.mybatis-spring>1.2.2</version.mybatis-spring>  
+		<version.mysql-java>5.1.38</version.mysql-java>
+		<version.commons-lang>2.6</version.commons-lang>
+		<version.commons-beanutils>1.8.3</version.commons-beanutils>
+		<version.commons-collections>3.2.1</version.commons-collections>
+		<version.commons-validator>1.3.1</version.commons-validator>	
+		<version.json-lib>2.3</version.json-lib>	
+		<version.servlet-api>3.1-b01</version.servlet-api>
+		<version.hessian>3.1.5</version.hessian>  
+		<version.junit>4.7</version.junit>
+		<version.cglib>2.2.2</version.cglib>
+		<version.c3p0>0.9.1.1</version.c3p0>
+		<version.aspectjweaver>1.6.12</version.aspectjweaver>
+		
+		<version.jta>1.1</version.jta>
+		<version.geronimo>1.1.1</version.geronimo>
+		<version.transactions>3.8.0</version.transactions>
+		
+				
+	</properties>
+	
+	<dependencies>
+				   
+	   <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-context-support</artifactId>  
+            <version>${version.spring}</version>  
+        </dependency>
+         <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-core</artifactId>  
+            <version>${version.spring}</version>  
+        </dependency>  
+        <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+        
+        <!-- mybatis包 -->  
+        <dependency>  
+            <groupId>org.mybatis</groupId>  
+            <artifactId>mybatis</artifactId>  
+            <version>${version.mybatis}</version>  
+        </dependency>  
+        <!-- mybatis/spring包 -->  
+        <dependency>  
+            <groupId>org.mybatis</groupId>  
+            <artifactId>mybatis-spring</artifactId>  
+            <version>${version.mybatis-spring}</version>  
+        </dependency>  
+        <!-- 导入Mysql数据库链接jar包 --> 
+        <dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${version.mysql-java}</version>
+		</dependency>
+        
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${version.log4j}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.mail</groupId>
+					<artifactId>mail</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>		
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${version.aspectjweaver}</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${version.aspectjweaver}</version>
+		</dependency>
+		
+		<dependency>
+	      <groupId>c3p0</groupId>
+	      <artifactId>c3p0</artifactId>
+	      <version>${version.c3p0}</version>
+	      <scope>compile</scope>
+	    </dependency>
+		
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>${version.jta}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>transactions-jta</artifactId>
+			<version>${version.transactions}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>transactions-jdbc</artifactId>
+			<version>${version.transactions}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>transactions</artifactId>
+			<version>${version.transactions}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>transactions-api</artifactId>
+			<version>${version.transactions}</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jms_1.1_spec</artifactId>
+			<version>${version.geronimo}</version>
+		</dependency>				
+		
+		
+		<dependency>
+	      <groupId>com.sinoiov.my</groupId>
+	      <artifactId>my-base-interface</artifactId>
+	      <version>1.0.0</version>
+	    </dependency>
+	    
+		
+	    <!-- 测试引用jar  -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${version.spring}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>${version.junit}</version>
+	      <scope>test</scope>
+	    </dependency>	 
+		
+	</dependencies>
+	
+	
+	<build>
+		<finalName>BaseService</finalName>
+		<plugins>
+		
+		<plugin>  
+			    <groupId>org.mybatis.generator</groupId>  
+			    <artifactId>mybatis-generator-maven-plugin</artifactId>  
+			    <version>1.3.2</version>  
+			    <configuration>  
+			        <configurationFile>generatorConfig.xml</configurationFile>  
+			        <verbose>true</verbose>  
+			        <overwrite>true</overwrite>  
+			    </configuration> 
+			    <!-- <executions>  
+			        <execution>  
+			            <id>Generate MyBatis Artifacts</id>  
+			            <goals>  
+			                <goal>generate</goal>  
+			            </goals>  
+			        </execution>  
+			    </executions>   --> 
+			    
+			    
+			    <dependencies>  
+			        <dependency>  
+			            <groupId>org.mybatis.generator</groupId>  
+			            <artifactId>mybatis-generator-core</artifactId>  
+			            <version>1.3.2</version>  
+			        </dependency>  
+			    </dependencies>  
+			</plugin>  
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>web_src</source>
+								<source>impl_src</source>
+								<source>dao_src</source>	
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>castor-maven-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+	<profiles>
+		<profile>
+			<id>product</id>
+			<properties>
+				<package.environment>product</package.environment>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<excludes>
+							<exclude>${package.environment}/*</exclude>
+						</excludes>
+						<filtering>true</filtering>
+					</resource>
+					<resource>
+						<directory>src/main/env/${package.environment}</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>testing</id>
+			<properties>
+				<package.environment>test</package.environment>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<excludes>
+							<exclude>${package.environment}/*</exclude>
+						</excludes>
+						<filtering>true</filtering>
+					</resource>
+					<resource>
+						<directory>src/main/env/${package.environment}</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>demo</id>
+			<properties>
+				<package.environment>dev</package.environment>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<excludes>
+							<exclude>${package.environment}/*</exclude>
+						</excludes>
+						<filtering>true</filtering>
+					</resource>
+					<resource>
+						<directory>src/main/env/${package.environment}</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+	</profiles>
+	
+	
+	<description>我的项目－基础接口服务</description>
+</project>

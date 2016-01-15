@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Generic">
+  <select id="dynamic_select" parameterClass="java.lang.Object" resultClass="java.util.HashMap" remapResults="true">
+    $selectSql$
+  </select>
+  <sql id="oracle_Pagination_Head">
+    <dynamic>
+      <isNotEmpty property="start">
+        <isNotEmpty property="limit">
+          <![CDATA[select * from ( select row_.*, rownum rownum_ from ( ]]>
+        </isNotEmpty>
+      </isNotEmpty>
+    </dynamic>
+  </sql>
+  <sql id="oracle_Pagination_Tail">
+    <dynamic>
+      <isNotEmpty property="start">
+        <isNotEmpty property="limit">
+          <![CDATA[) row_ where rownum < (TO_NUMBER(#limit#) + #start#) ) where rownum_ >= #start#]]>
+        </isNotEmpty>
+      </isNotEmpty>
+    </dynamic>
+  </sql>
+</sqlMap>

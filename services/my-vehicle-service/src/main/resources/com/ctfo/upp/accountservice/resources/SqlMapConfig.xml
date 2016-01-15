@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings useStatementNamespaces="true" />
+	<sqlMap resource="com/ctfo/upp/accountservice/daox/sqlmap/Generic_SqlMap.xml" />
+	<!-- payment dao's bean -->
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/AccountFrozenDetail_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/HOrderInfo_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/HPaymentTrade_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/OfflineRechargeApply_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/OfflineRechargeApplyApproval_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/OrderInfo_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/PaymentTrade_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/RechargeApplyVoucher_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/WithdrawCashApply_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/UnbalanceDetailWithBusPlatform_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/UnbalanceHandlerWithBusPlatform_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/CheckOrderDivergence_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/MainWithThirdPartyAccount_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/UPPStoreCheckBatch_SqlMap.xml"/>
+	
+	<!-- account dao's bean -->
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/Account_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/AccountDetail_SqlMap.xml" />
+    <sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/AccountingDay_SqlMap.xml" />
+    <sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/payment/AccountingMonth_SqlMap.xml" />
+    <sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/AuthenApplyInfo_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/CertifiedInfo_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/DetailWithThirdPartyAccount_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/HAccount_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/HSpecialAccount_SqlMap.xml" />
+    <sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/ReconOfBatch_SqlMap.xml" />
+    <sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/SpecialAccount_SqlMap.xml" />
+    <sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/SpecialAccountDetail_SqlMap.xml" />
+    <sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/UnbalanceDetailWithThirdPartyAccount_SqlMap.xml" />
+    <sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/UnbalanceHandlerWithThirdPartyAccount_SqlMap.xml" />
+    <sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/UnbalanceTradeWithThirdPartyAccount_SqlMap.xml" />
+    <sqlMap resource="com/ctfo/upp/accountservice/dao/sqlmap/account/AccountSafetyMess_SqlMap.xml" />
+	<!-- sql daox's bean -->
+	<!-- 订单交易查询SQL -->
+	<sqlMap resource="com/ctfo/upp/accountservice/daox/sqlmap/Trade_Order_SqlMap_Extend.xml" />
+	<!-- 普通和中交账户交易流水SQL 
+	<sqlMap resource="com/ctfo/upp/accountservice/daox/sqlmap/Account_Trade_SqlMap_Extend.xml" />-->
+	<!-- 根据账号查询账户流水时间段累计值-->
+	<sqlMap resource="com/ctfo/upp/accountservice/daox/sqlmap/Stat_Account_Trade_SqlMap_Extend.xml" />
+</sqlMapConfig>

@@ -1,0 +1,16 @@
+/**
+* this all css
+* version 2.0
+* author  malq
+* data    2014-02-15
+*/
+
+
+@import url("ligerUI_1.2.4/skins/all.css");
+@import url("jqueryAutoComplete/jquery.autocomplete.css");
+@import url("csm/all.css");
+@import url("passwordStrong.css");
+.a-line:hover{
+	text-decoration: underline;
+	color:orange;
+}

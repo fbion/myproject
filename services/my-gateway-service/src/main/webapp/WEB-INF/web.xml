@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>GateWayService</display-name>
+	<distributable />
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- hessian请求分发Start -->
+	<servlet>
+		<servlet-name>hessianServices</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-*.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hessianServices</servlet-name>
+		<url-pattern>/hessian/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>hessianServices</servlet-name>
+		<url-pattern>/callback/*</url-pattern>
+	</servlet-mapping>
+	<!-- hessian请求分发 End -->
+	
+	<!-- 接收易宝账户通回调的调用 End -->
+	<servlet>
+		<servlet-name>AccountAccessCallBack</servlet-name>
+		<servlet-class>com.ctfo.upp.gatewayservice.servlet.yibao.AccountAccessCallBackServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccountAccessCallBack</servlet-name>
+		<url-pattern>/sinoiov/AccountAccessCallBack.action</url-pattern>
+	</servlet-mapping>
+	<!-- 接收易宝账户通回调的调用 End -->
+	
+	<!-- 接收易宝委托结算回调的调用 End -->
+	<servlet>
+		<servlet-name>EntrustSettleCallBack</servlet-name>
+		<servlet-class>com.ctfo.upp.gatewayservice.servlet.yibao.EntrustSettleCallBackServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EntrustSettleCallBack</servlet-name>
+		<url-pattern>/sinoiov/EntrustSettleCallBack.action</url-pattern>
+	</servlet-mapping>
+	<!-- 接收易宝委托结算回调的调用 End -->
+	
+	<!-- 接收业务系统回调 Start -->
+	<servlet>
+		<servlet-name>BusinessCallBack</servlet-name>
+		<servlet-class>com.ctfo.upp.gatewayservice.servlet.yibao.BusinessCallBackServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BusinessCallBack</servlet-name>
+		<url-pattern>/BusinessCallBack.action</url-pattern>
+	</servlet-mapping>
+	<!-- 接收业务系统回调 End -->
+	
+	<servlet>
+		<servlet-name>testServlet</servlet-name>
+		<servlet-class>com.ctfo.upp.gatewayservice.servlet.yibao.TestServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testServlet</servlet-name>
+		<url-pattern>/testServlet.action</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring-all.xml</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:log4j.properties</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+
+
+
+	<!-- Spring 刷新Introspector防止内存泄露 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<!-- 著名 Character Encoding filter -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!--session超时定义,单位为分钟 -->
+	<session-config>
+		<session-timeout>40</session-timeout>
+	</session-config>
+
+
+</web-app>

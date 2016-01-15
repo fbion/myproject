@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+    					http://www.springframework.org/schema/aop 
+    					http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	default-lazy-init="false">
+
+	<!-- oracle config -->
+	<bean id="uppOracleDataSource" class="com.atomikos.jdbc.AtomikosDataSourceBean" init-method="init" destroy-method="close" scope="prototype">
+		<description>oracle xa datasource</description>
+		<property name="uniqueResourceName" value="${oracle_resourceName}" />
+		<property name="xaDataSourceClassName" value="${oracle_xaDataSourceClassName}" />
+		<property name="xaProperties">
+			<props>
+				<prop key="user">${oracle_user}</prop>
+				<prop key="password">${oracle_password}</prop>
+				<prop key="URL">${oracle_url}</prop>
+			</props>
+		</property>
+
+		<property name="testQuery">
+			<value>select 1 from dual</value>
+		</property>
+		<property name="poolSize" value="${oracle_poolSize}" />
+		<property name="maxPoolSize" value="${oracle_maxPoolSize}" />
+
+		<property name="maxIdleTime" value="${oracle_maxIdleTime}" />
+		<property name="borrowConnectionTimeout" value="${borrowConnectionTimeout}" />
+
+	</bean>
+	
+	<bean id="sqlMapClientOracle"
+		class="org.springframework.beans.factory.config.ListFactoryBean">
+		<property name="sourceList">
+			<list>
+				<value>classpath:/com/ctfo/upp/accountservice/resources/SqlMapConfig.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="uppOracleSqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocations" ref="sqlMapClientOracle" />
+		<property name="dataSource" ref="uppOracleDataSource" />
+	</bean>
+
+
+	<bean id="uppOracleClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<property name="sqlMapClient">
+			<ref bean="uppOracleSqlMapClient" />
+		</property>
+	</bean>
+
+	<alias name="${kcptClientTemplate}" alias="kcptClientTemplate" />
+	
+	<!--##### JTA事务配置开始 -->
+	<bean id="atomikosUserTransaction" class="com.atomikos.icatch.jta.UserTransactionImp">
+		<description>UserTransactionImp1</description>
+		<property name="transactionTimeout" value="300" />
+	</bean>
+
+	<bean id="atomikosTransactionManager" class="com.atomikos.icatch.jta.UserTransactionManager"
+		init-method="init" destroy-method="close">
+		<description>UserTransactionManager1</description>
+		<property name="forceShutdown">
+			<value>false</value>
+		</property>
+	</bean>
+	
+	<bean id="transactionManager"
+		class="org.springframework.transaction.jta.JtaTransactionManager">
+		<description>JtaTransactionManager1</description>
+		<property name="transactionManager">
+			<ref bean="atomikosTransactionManager" />
+		</property>
+		<property name="userTransaction">
+			<ref bean="atomikosUserTransaction" />
+		</property>
+	</bean>
+
+	<!-- 哪些类哪些方法使用事务 -->
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="serviceOperation" expression="execution(* com.ctfo.upp.accountservice.*.impl.*.*(..))" />
+		<aop:advisor pointcut-ref="serviceOperation" advice-ref="txAdvice" />
+	</aop:config>
+
+	<!-- 事务的传播特性 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="Throwable"
+				timeout="600" />
+			<tx:method name="create*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="update*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="modify*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="delete*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="remove*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="income" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="1000" />
+			<tx:method name="payout" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="frozenAccount" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="unfrozenAccount" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="lockAccount" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="unlockAccount" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="revoke*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="recovery*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="submit*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+		</tx:attributes>
+	</tx:advice>
+</beans>

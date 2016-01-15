@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+	                    http://www.springframework.org/schema/tx 
+	                    http://www.springframework.org/schema/tx/spring-tx-2.0.xsd 
+	                    http://www.springframework.org/schema/jee 
+	                    http://www.springframework.org/schema/jee/spring-jee-2.0.xsd 
+	                    http://www.springframework.org/schema/context 
+	                    http://www.springframework.org/schema/context/spring-context-2.0.xsd
+	                    http://www.springframework.org/schema/aop
+	                    http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+	default-lazy-init="false">
+
+	<!-- 车辆客户端 -->
+	<bean id="IVehicleManager" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="${IVehicleManager.location}" />
+		<property name="serviceInterface" value="com.ctfo.vims.datacenter.interfaces.manager.IVehicleManager" />
+	</bean>
+	<!-- 图片管理客户端 -->
+	<bean id="IImageManager" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="${IImageManager.location}" />
+		<property name="serviceInterface" value="com.ctfo.vims.datacenter.interfaces.manager.IImageManager" />
+	</bean>
+	<!-- 用户信息客户端 -->
+	<bean id="ILoginSystemSerciveManage" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="${ILoginSystemSerciveManage.location}" />
+		<property name="serviceInterface" value="com.ctfo.vims.datacenter.interfaces.manager.ILoginSysetmServiceManage" />
+	</bean>
+	<!-- 通用方法 -->
+	<bean id="IVimsGenericManager" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="${IVimsGenericManager.location}" />
+		<property name="serviceInterface" value="com.ctfo.vims.datacenter.interfaces.manager.IVimsGenericManager" />
+	</bean>
+	<!-- 车辆最后位置方法_已经弃用 -->
+	<bean id="IBussinessScopeManager" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="${IBussinessScopeManager.location}" />
+		<property name="serviceInterface" value="com.ctfo.vims.datacenter.interfaces.manager.IBussinessScopeManager" />
+	</bean>
+	<!-- 车辆最后位置方法_新方法 -->
+	<bean id="IVehicleLableManager" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="${IVehicleLableManager.location}" />
+		<property name="serviceInterface" value="com.ctfo.vims.datacenter.interfaces.manager.IVehicleLableManager" />
+	</bean>
+	<!-- 码表客户端 -->
+	<bean id="ISystemCodeManager" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="${ISystemCodeManager.location}" />
+		<property name="serviceInterface" value="com.ctfo.vims.datacenter.interfaces.manager.ISystemCodeManager" />
+	</bean>
+	<!-- 车辆变更日志 -->
+	<bean id="ILogManager" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="${ILogManager.location}" />
+		<property name="serviceInterface" value="com.ctfo.vims.datacenter.interfaces.manager.ILogManager" />
+	</bean>
+	
+	<!-- 车辆清洗日志 -->
+	<bean id="IVehicleAttributeCollateManager" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="${IVehicleAttributeCollateManager.location}" />
+		<property name="serviceInterface" value="com.ctfo.vims.datacenter.interfaces.manager.IVehicleAttributeCollateManager" />
+	</bean>
+	
+	
+
+</beans>

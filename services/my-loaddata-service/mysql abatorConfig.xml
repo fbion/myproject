@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN" "http://ibatis.apache.org/dtd/abator-config_1_0.dtd" >
+<abatorConfiguration >
+  <abatorContext generatorSet="com.ctfo.ibatis.abator.extend.Java2OracleGeneratorSet">
+     <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/vims" userId="root" password="root1234" >
+     <classPathEntry location="/Users/malongqing/Documents/IDE/DriveClass/mysql-connector-java-5.1.38-bin.jar" />
+    </jdbcConnection>
+    
+    <javaModelGenerator  targetPackage="com.sinoiov.vehicle.dao.beans" targetProject="my-loaddata-interface/generated_src" >
+    	<property name="rootClass" value="com.sinoiov.beans.BaseSerializable" />
+    	<property name="enableSubPackages" value="false" />
+    </javaModelGenerator>
+    
+    <sqlMapGenerator targetPackage="com.sinoiov.vehicle.dao.sqlmap" targetProject="my-loaddata-service/src/main/resources" />
+    
+    <daoGenerator targetPackage="com.sinoiov.vehicle.dao" targetProject="my-loaddata-service/dao_src" type="SPRING-ORACLE">
+   
+    </daoGenerator>
+    
+    <!--
+    <table schema="vims" tableName="TB_SIMPLE_CODE" modelType="flat" domainObjectName="SimpleCode">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    <table schema="vims" tableName="TB_VEHICLE" modelType="flat" domainObjectName="Vehicle">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    <table schema="vims" tableName="TB_LOAD_TIME" modelType="flat" domainObjectName="LoadTime">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    -->
+    
+    
+    <table schema="vims" tableName="TB_IMAGE" modelType="flat" domainObjectName="Image">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    <table schema="vims" tableName="TB_VEHICLE_AUTHENTICATION" modelType="flat" domainObjectName="VehicleAuthentication">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    <table schema="vims" tableName="TB_VEHICLE_LABLE" modelType="flat" domainObjectName="VehicleLable">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    <table schema="vims" tableName="TB_VEHICLE_LINE" modelType="flat" domainObjectName="VehicleLine">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    <table schema="vims" tableName="TB_ZONE_CODE" modelType="flat" domainObjectName="ZoneCode">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    
+    
+  </abatorContext>
+</abatorConfiguration>

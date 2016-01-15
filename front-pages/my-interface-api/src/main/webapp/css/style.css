@@ -1,0 +1,85 @@
+@CHARSET "UTF-8";
+body{
+ font-family:'Microsoft Yahei','Hiragino Sans GB',"\5b8b\4f53",sans-serif;
+ color:#333333;
+}
+ul{
+ padding:0;
+ margin:0;
+}
+li{
+ list-style:none;
+}
+body,html{
+ background-color:#eaeaea;
+}
+.header{
+ width:100%;
+ display:inline-block;
+ background-color:#ffffff;
+ border-bottom:1px solid #d2d2d2;
+}
+.header,.button{
+ padding:0em 1.2em 0em 1.2em;
+}
+.header_top{
+ text-align:center;
+ padding:1.5em 0em 1.5em 0em;
+}
+.header_top span{
+ font-size:1.5em;
+ vertical-align:middle;
+ padding-left:0.3em;
+}
+.header_mid{
+ padding-bottom:1.2em; 
+}
+.header_bot{
+ padding-bottom:1.2em;
+}
+.header_bot li{
+ line-height:1.5em;
+}
+.header_bot span{
+ padding-left:0.1em;
+}
+.header_bot .header_corlor{
+ color:#ff2929;
+}
+.header_mid,.header_bot{
+ font-size:1.1em;
+}
+.button{
+ padding-top:0.6em;
+}
+.button_one input,.button_two input{
+ width:100%;
+ border:0px;
+ border-radius:0.2em 0.2em 0.2em 0.2em;
+ font-size:1.1em;
+ padding:0.5em 0em 0.5em 0em;
+ margin-top: 0.8em;
+}
+.button_one input{
+ background-color:#ff8502;
+ color:#ffffff;
+}
+.button_two input{
+ background-color:#ffffff;
+ color:#ff8502;
+ border:1px solid #ff7e00;
+}
+/*支付失败*/
+.header_bot dt{ 
+ font-weight:lighter;
+}
+.header_bot dl{
+ margin-bottom:0px;
+}
+.header_bot dd{
+ text-indent:-1.6em;
+ padding-left:1.6em;
+}
+.mt1{
+ margin-top:1em;
+}

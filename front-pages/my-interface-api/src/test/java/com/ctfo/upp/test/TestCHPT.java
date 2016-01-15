@@ -1,0 +1,55 @@
+package com.ctfo.upp.test;
+
+import net.sf.json.JSONObject;
+
+import com.ctfo.upp.security.ConvertUtils;
+
+public class TestCHPT {
+	
+private static String chptPrivateKey = "MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBANIjCEAy/jOSJYyCGXwa5af+Co8/cr9K3W8QmjpSKKffjiumc8X09A24GTwRnVrhQALVYQcVvgkZEk7ON3ktkZ3yqwJvlvsHky1VXh+54vqYiik0QpDrQv/IKh+20+pyg7+X9UgHhezNskflemUfEKXv1XQLr/kW6qoh2It6cIBhAgMBAAECgYEAiNrb8sPDHl8eKUZJxrPVwfUHd4fA+aiOUlkjuLvtUnecJf2ABPqlP5IYjTCDpL5ya+YADRcx7sbvT3eqVTdCT8ZKZxswt1sq7wBieEvxZW9YfnPSVAGiVBeyrjHm71OVTj/i7ddggbP1CMs3OqCV8qgBeTF9Mi5l5qTPjLhcJuECQQD/YMsaYVV/AA8DMFH6ek/ZdZrBsS2uezqB1DksV4d6aRqs5NVpSgNLJ/xQc4J/KF7PLz1whGvIhK7AWW0mm3QVAkEA0qYI5mT6c6Djc0QlyBVlifCYNcsHKKM4rFF5i21Arq/JoT9pmHM0ryLBhbI+nuVwfSvWjQZeCJ5zj7b8NldyHQJAEmhzu28QrpreeihdgGSYpOApS5Tt6gnP6dPWWy/kABrbZWMJTxGasywqr9Hjsi7CxsRs9VNWQZnuzsaja4kBEQJBAJn9IIJ0jRYcJknsJoZ3Bcxp4otoiSou784gnW7Mhj1takODXMlCZuAk0z3OSLLV3X7TnjtnzTQVyTrlNMjw8g0CQQCvJzD8MUuYMv31BXQ2+O7YZNSjuyefhWX4GfnP5LhRtdksPNWa96r/sT2vc6VPQ5nofLHo7d8NnxwqxBmbS0PZ";
+	
+	private static String chptPublicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDSIwhAMv4zkiWMghl8GuWn/gqPP3K/St1vEJo6Uiin344rpnPF9PQNuBk8EZ1a4UAC1WEHFb4JGRJOzjd5LZGd8qsCb5b7B5MtVV4fueL6mIopNEKQ60L/yCofttPqcoO/l/VIB4XszbJH5XplHxCl79V0C6/5FuqqIdiLenCAYQIDAQAB";
+	
+	private static String uppPrivateKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMZDZfeUhf+53j/YwWzYGvKNjl2O1b9C+pabmPFlE42X9ZJwTfpIDePlW5Qj227/yQZ7yhwbrnQA6sSbuDdYMlGdDlp0p7p5w2poDCwfpmWY4wjOvTbmFGo/daoM4Wd+3a+3EpYIjlSSF2SqgMuKrwS0hLTCt/9YZUNLNE7KGZgfAgMBAAECgYBrmDwIBjRKOaZhY9JkrUrCgwvVviRFraWsgjiYGFBqMSN2GzhWMTBIkzoFxQfazzlbKWbfpi4gijbeB9wLPPPg3XbJpaJCanRz48sfsYbnY1kl+EA+URcUIyresWs1RY08SVchmNbDgbc2WnaFP2zGnHV2OasZ5a82lstGBC7v0QJBAPKVN94kwKlgB9I0e1BZwNnuJMPYreriMpUp2firkPyjkk4Xf5j5VEMiCKDNMvLUX1kWqpae9kfq/nMGXw6Jf70CQQDROqZDVWJSef+VdgEw6a4wD3EGUDYcDTnSo+bLG/poAjee4f0zRoqxCBoxqG1R4/Ww6VH4YO5XFLRtD74g9bcLAkEAprThNepv9HYoKc8jR27G132PCoAn1RkpxdSDFR9ifhwy+TOw3oHJ5HDJGSircLF97Q1koioP+hCGWKnyPV1EyQJAJvcCMbX8CpoXxBDm5eIPA3pMtT1I5m58H0NQ3vCF8MrA6wDxM5RmjdORdUAFo+ONRPYewt/iYytC8rCk2uSHwwJAPSActQWSVXRTwVRvqoYbi/oKb3sGWUM4zyxLn4v8AmS7or9GEh93VYYeA8DIhVMnRMT7nEh7/sfB3u91vpfWQw==";
+	
+	private static String uppPublicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGQ2X3lIX/ud4/2MFs2BryjY5djtW/QvqWm5jxZRONl/WScE36SA3j5VuUI9tu/8kGe8ocG650AOrEm7g3WDJRnQ5adKe6ecNqaAwsH6ZlmOMIzr025hRqP3WqDOFnft2vtxKWCI5UkhdkqoDLiq8EtIS0wrf/WGVDSzROyhmYHwIDAQAB";
+	
+	private static String uppCode="201501211146539567052";
+	
+	private static String chptCode="201501201602491637563";
+
+
+	public static void main(String[] args) {
+		
+		try{
+		//http://192.168.110.93:8083/gatewayService/callback.action?dataSource=0?
+		String json = "{\"result\":\"1\",\"orderNo\":\"99920150611135705023\",\"payConfirmDate\":\"1434002225496\",\"payType\":\"ACCOUNT\",\"workOrderNo\":\"A_rc20150611135624675\",\"merchantOrderAmount\":\"0.05\"}";
+		//String data ="zrp2JBbNUX5n73VEKl0txl+gNAxFvsVYmrO775XyHdBagcUOdBLVgvEiqLTqBSvSFVsz+lNKSj/4j9Z9q/ixH1NEzUbyaDWI5g25KJlG9+8vCOVC2o+kspGcVEfq7ssbhYCuX6QmjE7dH/KaAQvzwHo9wYSAqhsgqVKpt2KOmNb9weOJefqvuiRfS1efim5R6fAW2t8KTJWhGeCrJwdtGop0/4ZJYuAECLCsh7mTCxwnza9YrsDo/6NZJa7DtWyXsAmULs+6vLdS1UwTBXWEkaKExVTBeuVFLD4E8Re8EU/Za60jakr5T4T6zcEHT5/iCZDNoJdIRg92lDTBkkdFpHFFvxI9HPYIFxYfQsBKstr2VY2J7P8gO0dtrKuUqiwv7oLiwGxiQqjDZngPlCUaXaU65A3+uO5VlkMD38cS5/KdWv0KAUDYtVf9dLkEkjJcUV7DySpKJnZd9V5peaIDBg==";
+		//String encryptkey="AsNa/CP4uiaXzQTD7hwA9ZfzJdzCpAELpkfQaCzb/34OiA7jX7GVfL7AF/syNT3BSRl9uk7vqQP4Aw1+efSlH2AcFfmx/cpweiSvih3hIR8Cys805sKcAh8JBkimjpwA38KIHGqhhAND5ejESgJ7wVpwy4jtwFvyr1t0jlCZMBA=";
+		String merchantcode="201501201602491637563";
+		JSONObject jsonMap = JSONObject.fromObject(json);
+		if(Long.parseLong(merchantcode.substring(0, 8)) < Long.parseLong("201503120000000000000".substring(0, 8))){
+			json = ConvertUtils.encodeReturnJson_1_0_0(jsonMap.toString(), uppPrivateKey, chptPublicKey, uppCode);
+		}else{
+			json = ConvertUtils.encodeReturnJson(jsonMap.toString(), uppPrivateKey, chptPublicKey);
+			json = json.substring(0,json.length()-1) + ",\"merchantcode\":\""+merchantcode+"\"}";
+		}
+		
+		jsonMap = JSONObject.fromObject(json);
+		String data = jsonMap.getString("data");
+		String encryptkey = jsonMap.getString("encryptkey");
+		
+		
+		json = ConvertUtils.decodeParamJson_1_0_0(data, encryptkey, chptPrivateKey, uppPublicKey);
+		
+		System.out.println("---:"+json);
+		
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		
+
+	}
+
+}

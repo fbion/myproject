@@ -1,0 +1,11 @@
+p{font-size: 100%}
+.table{margin-left: 10px; margin-top: 10px; margin-bottom: 10px;}
+td.text{width: 80px; text-align: right}
+td.input{width: 150px;padding-left: 20px;height : 40px}
+input{size: 20}
+hr{color: #ccc}
+.span{font-family: Î¢ÈíÑÅºÚ; font-size: 100%; font-weight: normal; font-style: normal; text-decoration: none; color: #333333}
+td.aetext1{width:130px; height:30px; text-align: right}
+td.aetext2{padding-left: 50px; text-align: right}
+td.aetext3{padding-left: 20px}
+input.ae{width: 150px}

@@ -1,0 +1,2 @@
+#default IServiceCreator  implementation
+com.ctfo.csm.soa.support.ServiceCreatorAdaptor

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>处理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../../css/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../js/jquery/jquery-1.5.2.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var uri = window.location.pathname;
+		
+		var arr=uri.split('/'); 
+		
+		var rootName =arr[1];
+		
+		var headerArr =null;
+		$(function(){ 
+		
+			$("#button_sub").click(function(){
+				 alert('2');
+				$.getJSON("/"+rootName+"/hecordHandle/queryObject.action?objectName="+$("#objectName_Selector").val(), function (result) {
+					alert('result:'+result);
+					
+					var obj = eval(result);
+					
+					$.each(obj, function (i, field) {
+						//$("#cs").append("<li style=\"float:; margin-top:3px;margin-left:10px;\">" + field.accountId + "," + field.balance + "</li>");
+						var newRow='<tr id="option'+i+'"><td class="oz-form-topLabel">'+field[headerArr[1]]+'</td><td class="oz-property" >'+ field[headerArr[2]] +'</td></tr>';  
+						$('#listTable').append(newRow);  
+					});
+				});
+			});
+			$("#buttonQuery").click(function(){
+				 
+				$.getJSON("/"+rootName+"/hecordHandle/gateWayQuery.action?accountNo="+$("#accountNo").val(), function (result) {
+					alert('result:'+result);
+					
+					var obj = eval(result);
+					
+					$.each(obj, function (i, field) {
+						//$("#cs").append("<li style=\"float:; margin-top:3px;margin-left:10px;\">" + field.accountId + "," + field.balance + "</li>");
+						var newRow='<tr id="option'+i+'"><td class="oz-form-topLabel">'+field[1]+'</td><td>'+ field[2] +'</td></tr>';  
+						$('#listTable').append(newRow);  
+					});
+				});
+			});
+			$("#objectName_Selector").change(function(){
+				
+				
+				 $.ajax({
+		             type: "GET",
+		             url:"/"+rootName+"/hecordHandle/queryHeader.action?objectName="+$("#objectName_Selector").val(),
+		             success: function(data){
+				            	 alert(data);
+								headerArr = data.split('|'); 
+								$.each(headerArr, function (i, field) {
+									var newColumn='<td class="oz-form-topLabel">'+field+'</td>';  
+									$('#headerTr').append(newColumn);  
+								});
+		                      }
+		         });
+			});
+			
+		}); 	
+	</script>
+	<div id="cs" class="stuff"></div>
+	<form>
+		<select name='objectName' id='objectName_Selector'>
+			<option value='CheckAccountFailRecord'>对账失败记录</option>
+			<option value='YBLog'>与易宝的交互记录</option>
+		</select>
+		
+		<input type='button' name='buttonSub' id='button_sub' value='提交'/>
+	</form>
+		<input type='text' name='accountNo' id='accountNo'/>
+		<input type='button' name='buttonQuery' id='buttonQuery' value='提交'/>
+	<form>
+	</form>
+	<table name='listTable' id='listTable' style="margin: 5px 0px 0px 61px;" border="2" cellspacing="2px">
+		<tr name='headerTr' id='headerTr'></tr>
+	</table>			
+</body>
+</html>

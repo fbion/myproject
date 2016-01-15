@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"  
+    default-lazy-init="false">
+
+	
+	
+	<!-- 自动扫描 -->  
+    <context:component-scan base-package="com.sinoiov" />  
+    <!-- 引入配置文件 -->  
+    <bean id="propertyConfigurer"  
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+        <property name="location" value="classpath:jdbc.properties" />  
+    </bean>  
+  
+    <!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"  
+        destroy-method="close">  
+        <property name="driverClassName" value="${driver}" />  
+        <property name="url" value="${url}" />  
+        <property name="username" value="${username}" />  
+        <property name="password" value="${password}" />  
+        初始化连接大小  
+        <property name="initialSize" value="${initialSize}"></property>  
+        连接池最大数量  
+        <property name="maxActive" value="${maxActive}"></property>  
+        连接池最大空闲  
+        <property name="maxIdle" value="${maxIdle}"></property>  
+        连接池最小空闲  
+        <property name="minIdle" value="${minIdle}"></property>  
+        获取连接最大等待时间  
+        <property name="maxWait" value="${maxWait}"></property>  
+    </bean>   -->
+ 
+	<!-- 数据源定义,使用c3p0 连接池 -->
+	<bean id="mysqlDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${mysql_driverClassName}" />	
+		<property name="jdbcUrl" value="${mysql_url}" />	
+		<property name="user" value="${mysql_user}" />
+		<property name="password" value="${mysql_password}" />
+		<property name="initialPoolSize" value="${mysql_poolSize}" />
+		<property name="minPoolSize" value="1" />
+		<property name="maxPoolSize" value="${mysql_maxPoolSize}" />
+		<property name="acquireIncrement" value="2" />
+		<property name="maxIdleTime" value="${mysql_maxIdleTime}" />
+		<property name="idleConnectionTestPeriod"  value="180"/>  
+		<!-- <property name="automaticTestTable" value="C3P0TESTTABLE"/> --> 
+	</bean>
+  
+  
+    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->  
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+        <property name="dataSource" ref="mysqlDataSource" />  
+        <!-- 自动扫描mapping.xml文件 -->  
+        <property name="mapperLocations" value="classpath:com/sinoiov/vehicle/dao/mapper/*.xml"></property>  
+    </bean>  
+  
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->  
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
+        <property name="basePackage" value="com.sinoiov.vehicle.dao" />  
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
+    </bean>  
+  
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->  
+    <bean id="transactionManager"  
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <property name="dataSource" ref="mysqlDataSource" />  
+    </bean>  
+    
+	<!-- 哪些类哪些方法使用事务 -->
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="serviceOperation" 
+				expression="execution(* com.sinoiov.vehicle.baseservice.*.*(..))" />
+		<aop:advisor pointcut-ref="serviceOperation" advice-ref="txAdvice" />
+	</aop:config>
+
+	<!-- 事务的传播特性 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="Throwable"
+				timeout="600" />
+			<tx:method name="create*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="update*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="modify*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="delete*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+			<tx:method name="remove*" propagation="REQUIRED"
+				rollback-for="Throwable" timeout="600" />
+		</tx:attributes>
+	</tx:advice>
+</beans>

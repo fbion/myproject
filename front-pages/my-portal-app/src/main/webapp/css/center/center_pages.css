@@ -1,0 +1,56 @@
+@charset "utf-8";
+/*right*/
+/*资金账户*/
+.lists-form  table td.nextsel_num{
+ width:80px;
+}
+.lists-form  table td.mark .nextsel_num_btn{
+ width:101px;
+ height:30px;
+ background-color:#ff7200;
+ color:#fff;
+ border:none;
+ border-radius: 2px 2px 2px 2px;
+ cursor: pointer;
+ font-size:14px;
+ margin-right:15px;
+}
+/*最近交易记录*/
+.oil_record_title{
+ line-height:34px;
+ border-bottom:2px solid #ff7200;
+}
+.record_title_tab a{
+ display:inline-block;
+ padding:0px 20px 0px 20px;
+ color:#666;
+ border:1px solid #e8e8e8;
+ border-bottom:0px;
+}
+.record_title_tab a:hover,.record_title_tab .title_tabcurr{
+ background-color:#ff7200;
+ color:#fff;
+ text-decoration:none;
+ border:1px solid #ff7200;
+ border-bottom:0px;
+}
+/*资金账户充值*/
+.lists-form table td.nextsel_num input[type="text"]{
+ width:150px;
+}
+/*资金账户银行转账*/
+.next-lists-form table td.nextsel input.nextselbtn_arge[type="button"]{
+ width:100px;
+}
+/*账户交易记录*/
+
+.rightsideBar_title2 {
+ border-bottom: 2px solid #ff7200;
+}
+.Barprompt_main {
+ padding-left: 35px;
+}
+.Barprompt li {
+ text-align: left;
+ padding-left: 10px;
+}

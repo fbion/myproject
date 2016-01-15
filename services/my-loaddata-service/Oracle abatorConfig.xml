@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN" "http://ibatis.apache.org/dtd/abator-config_1_0.dtd" >
+<abatorConfiguration >
+  <abatorContext generatorSet="com.ctfo.ibatis.abator.extend.Java2OracleGeneratorSet">
+     <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.110.170:1521:orcl" userId="upp" password="upp" >
+     <classPathEntry location="D:/DriveClass/ojdbc6.jar" />
+    </jdbcConnection>
+    
+    <javaModelGenerator  targetPackage="com.ctfo.base.dao.beans" targetProject="upp-base-interface/generated_src" >
+    	<property name="rootClass" value="com.ctfo.upp.models.BaseSerializable" />
+    	<property name="enableSubPackages" value="false" />
+    </javaModelGenerator>
+    
+    <sqlMapGenerator targetPackage="com.ctfo.upp.baseservice.dao.sqlmap" targetProject="upp-base-service/src/main/resources" />
+    
+    <daoGenerator targetPackage="com.ctfo.upp.baseservice.dao" targetProject="upp-base-service/dao_src" type="SPRING-ORACLE">
+   
+    </daoGenerator>
+    
+    <table schema="UPP" tableName="TB_UPP_STORE_MESS" modelType="flat" domainObjectName="UPPlatform">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    
+    <!--table schema="UPP" tableName="TB_UPP_PARAM" modelType="flat" domainObjectName="UPParam">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+     <table schema="UPP" tableName="TB_UPP_STORE_URL_MESS" modelType="flat" domainObjectName="UPPlatformCallbackUrl">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    
+    <table schema="UPP" tableName="TB_UPP_SIMPLE_CODE" modelType="flat" domainObjectName="SimpleCode">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    <table schema="UPP" tableName="TB_UPP_BANK_CARD_INFO" modelType="flat" domainObjectName="BankCardInfo">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    <table schema="UPP" tableName="TB_UPP_PAY_SERVICE_PROVIDER" modelType="flat" domainObjectName="ChannelInfo">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    -->
+  </abatorContext>
+</abatorConfiguration>

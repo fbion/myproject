@@ -1,0 +1,81 @@
+@charset "utf-8";
+/*dialog20150123 start*/
+.j-dialog{background-color:white;border:1px solid #ccc;font-size:14px;font-family:tahoma, helvetica, "microsoft yahei", "宋体",arial;position:absolute;clear:left;overflow:hidden}
+.j-dialog-shadow{-webkit-box-shadow:3px 3px 3px rgba(0, 0, 0, .2);box-shadow:3px 3px 3px rgba(0, 0, 0, .2);}
+.j-translucent-border{-webkit-background-clip:padding;background-clip:padding-box;border:8px solid rgba(0,0,0,0.2);border-radius:5px}
+.j-dialog-fix{position:fixed}
+.j-dialog.j-user-select{-webkit-user-select:none;user-select:none}
+.j-dialog .j-dialog-title{height:50px;line-height:52px;padding-left:20px;font-size:18px;border-bottom:1px solid #e3e6e8}
+.j-dialog .j-draggable{cursor:move}
+.j-dialog .j-dialog-close{background:url(../../global/images/popup.png) -55px 0;width:13px;height:13px;float:right;margin:18px 15px 0 0;}
+.j-dialog .j-dialog-close:hover{text-decoration: none}
+.j-dialog .j-dialog-content{color:#454545}
+.j-dialog .j-dialog-buttons{font-size:12px;padding:17px 20px 13px 18px;margin:0;text-align:right}
+.j-dialog .j-dialog-buttons .first-child{background-position:0 0;color:#fff}
+.j-dialog .j-dialog-buttons .first-child:hover{background-position:0 -37px}
+.j-dialog .j-dialog-btn{margin-left:6px;border-radius:3px;cursor:pointer;border:0;width:60px;height:31px;font-size:14px;display:inline-block;color:#fff;background:#ff9000;line-height:31px}
+.j-dialog .j-dialog-btn:hover,.j-dialog .j-dialog-btn.x-hover{background:#ff6500}
+.j-dialog .j-dialog-btn.x-highlight{color:#fff;background-position:-0 2px}
+.j-dialog .j-dialog-btn.x-highlight:hover,.j-dialog .j-dialog-btn.x-highlight.x-hlhover{background-position:0 -28px}
+.j-dialog .j-triangle{display:block;position:relative}
+.j-dialog .j-triangle .t-border,.j-dialog .j-triangle .t-inset{left:0;top:0;width:0;height:0;font-size:0;overflow:hidden;position:absolute;border-width:12px;border-style:dashed solid dashed dashed}
+.j-dialog .j-triangle .t-border{border-color:transparent #aaa transparent transparent;left:-1px}
+.j-dialog .j-triangle .t-inset{border-color:transparent #fff transparent transparent}
+.j-dialog .j-triangle.anchor-bottom .t-border,.j-dialog .j-triangle.anchor-bottom .t-inset{border-style:solid dashed dashed dashed}
+.j-dialog .j-triangle.anchor-bottom .t-border{border-color:#aaa transparent transparent transparent;left:0;top:1px}
+.j-dialog .j-triangle.anchor-bottom .t-inset{border-color:#fff transparent transparent transparent}
+.j-dialog .j-triangle.anchor-top .t-border,.j-dialog .j-triangle.anchor-top .t-inset{border-style:dashed dashed solid dashed}
+.j-dialog .j-triangle.anchor-top .t-border{border-color:transparent transparent #aaa transparent;left:0;top:-1px}
+.j-dialog .j-triangle.anchor-top .t-inset{border-color:transparent transparent #fff transparent}
+.j-dialog .j-triangle.anchor-right .t-border,.j-dialog .j-triangle.anchor-right .t-inset{border-style:dashed dashed dashed solid}
+.j-dialog .j-triangle.anchor-right .t-border{border-color:transparent transparent transparent #aaa;left:1px;top:0}
+.j-dialog .j-triangle.anchor-right .t-inset{border-color:transparent transparent transparent #fff}
+.j-dialog-mask{background-color:#000;filter:alpha(opacity = 40);opacity:.4;zoom:1;left:0;position:absolute;top:0;width:100%}
+.j-dialog .resizable-es{bottom:0;cursor:se-resize;height:10px;position:absolute;right:0;width:10px}
+.j-dialog .resizable-es div{border-bottom:3px double #bbb;border-right:3px double #bbb;height:6px;width:6px;line-height:0;position:absolute;left:0;top:0}
+.popDialog{background-color:transparent!important;border:none!important;}
+/*dialog20150123 end*/
+
+/*20150123 start*/
+.addrselector{position:relative;float:left;font-family:"微软雅黑",Arial;font-size:12px;}
+.addrselector.zi2{z-index:2;}/*防止ie7 第二个框在浮层框的上面*/
+.addrselector.zi1{z-index:1;}/*如果就一个下拉框就不用加*/
+.addrselector .dn{display:none;}
+.addrselector .dib{font-size:0;text-justify:inter-ideograph;}
+.addrselector .dib li{display:inline-block;vertical-align:top;*display:inline;*zoom:1;font-size:12px;}
+.addrselector a{cursor:pointer;-webkit-user-select:none;-ms-user-select:none;-moz-user-select:none;}/*既然都不冒泡了，就省了href属性吧，又少了好几十个字符*/
+.addrselector dl{min-width:380px;min-height:150px;*width:380px;border:1px solid #ddd;position:absolute;margin:-1px 0 0 -30px;padding:8px 5px 30px;z-index:1;background:#fff;}
+.addrselector dt{border-bottom:2px solid #EDD28B;height:24px;line-height:15px;}
+.addrselector dt .tab{float:left;padding:4px 18px 4px 10px;margin-left:5px;border:1px solid #ddd;border-bottom:none;color:#005AA0;background:#fff;}
+.addrselector dt .tab i{width:7px;height:5px;margin:6px 0 0 7px;background:url(../images/down-angle.gif) -1px -22px no-repeat;position:absolute;-moz-transition:all .1s ease 0s;-webkit-transition:all .1s ease 0s;transition:all .1s ease 0s;}
+.addrselector dt .tab:hover i,.addrselector dt .tab.crt i{-webkit-transform:rotate(180deg);transform:rotate(180deg);-webkit-transition:all .25s ease 0s;transition:all .25s ease 0s;}
+.addrselector dt .tab.crt{padding-bottom:6px;margin:-1px -1px 0 4px;border:2px solid #EDD28B;border-bottom:none;}
+.addrselector dd{margin-top:8px;line-height:1.8;overflow:hidden;}
+.addrselector .hot{padding-left:70px;}
+.addrselector .hot li{float:left;width:61px;}
+.addrselector .hot li.cl{clear:left;}
+.addrselector dd li{width:75px;padding:2px 0;list-style:none;}
+.addrselector dd b{position:absolute;margin-left:-65px;}
+.addrselector dd a{padding:2px 4px;margin:5px 2px;color:#005AA0;}
+.addrselector dd a:hover{background:#005AA0;color:#fff;}
+.addrselector .addr{height:22px;width:204px;line-height:21px;padding:3px 0 3px 26px;border:1px solid #d5d9de;background:#fff url(../images/search_icon.png) no-repeat 5px 6px;position:relative;cursor:default;}
+.addrselector .addr .em{min-width:110px;width:90%;float:left;border:none;color:#999}
+.addrselector .addr i{width:22px;height:20px;float:left;position:absolute;top:10px;right:0px;background: url(../images/select_arrow.png) no-repeat !important;overflow:hidden;}
+.addrselector .addr.hover{height:23px;border-bottom:none;z-index:2;}
+.addrselector dd b.a{margin-top:1px;}
+.addrselector dd b.b{margin-top:51px;}
+.addrselector dd b.c{margin-top:101px;}
+.addrselector dd b.d{margin-top:151px;}
+.addrselector .reset{width:30px;height:18px;margin:-3px 10px 0 0;float:right;} 
+/*20150123 end*/
+
+/*upimg start*/
+.picPreview a{background:url(../../global/images/vip/upimg.png) -93px 0;width:16px;height:16px;margin:10px 0 0 -32px;position:absolute;}
+.picPreview a:hover{background-position:-114px 0}
+.picPreview img{width:110px;height:110px;margin:5px 10px 0 0;}
+.picPreview span{float:left;}
+.picPreview .previewpic{width:110px;height:110px;background:#f2f2f2;text-align:center;line-height:110px;margin-top:5px;}
+.picPreview .hand{cursor:pointer;}
+.attachmentBean{position:absolute;opacity:0;filter: alpha(opacity=0);width:89px;height:32px;}
+.fileBtn{background:url(../../global/images/vip/upimg.png);width:88px;height:30px;border:0;vertical-align:middle}
+/*upimg end*/

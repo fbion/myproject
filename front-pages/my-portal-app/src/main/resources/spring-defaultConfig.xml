@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+    					http://www.springframework.org/schema/aop 
+    					http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	default-lazy-init="false">
+    
+    <bean id="defaultConfigBean" class="java.util.HashMap">
+    	<constructor-arg>
+    		<map>
+    			<!--接口发布地址  -->
+    			<entry>
+    				<key><value>UPP_INTERFACE_URL</value></key>
+    				<value>${UPP_INTERFACE_URL}</value>
+    			</entry>
+    			<!--商户编号  -->
+    			<entry>
+    				<key><value>MERCHANT_CODE</value></key>
+    				<value>${MERCHANT_CODE}</value>
+    			</entry>
+    			<!--支付编号  -->	
+    			<entry>
+    				<key><value>INTERFACE_CODE</value></key>
+    				<value>${INTERFACE_CODE}</value>
+    			</entry>
+    			<!-- 按条件查询账户 -->
+    			<entry>
+    				<key><value>UPP_QUERY_ACCOUNT</value></key>
+    				<value>${UPP_QUERY_ACCOUNT}</value>
+    			</entry>
+    			<!--获取资金账户流水  -->
+    			<entry>
+    				<key><value>UPP_QUERY_ACCOUNT_CURRENT</value></key>
+    				<value>${UPP_QUERY_ACCOUNT_CURRENT}</value>
+    			</entry>
+    			<!--修改资金账户密码  -->
+    			<entry>
+    				<key><value>UPP_PAYMENT_PASSWORD_CHANGE</value></key>
+    				<value>${UPP_PAYMENT_PASSWORD_CHANGE}</value>
+    			</entry>
+    			<!-- 设置资金账户密码 -->
+    			<entry>
+    				<key><value>UPP_PAYMENT_PASSWORD_SET</value></key>
+    				<value>${UPP_PAYMENT_PASSWORD_SET}</value>
+    			</entry>
+    			<!-- 通过ID获取资金账户信息 -->
+    			<entry>
+    				<key><value>UPP_QUERY_ACCOUNT_BY_OWERUSERID</value></key>
+    				<value>${UPP_QUERY_ACCOUNT_BY_OWERUSERID}</value>
+    			</entry>
+    			<!--图片地址  -->
+    			<entry>
+    				<key><value>IMAGE_URL</value></key>
+    				<value>${IMAGE_URL}</value>
+    			</entry>
+    			<!--获取短信验证码  -->
+    			<entry>
+    				<key><value>UPP_ACCOUNT_GETSMSCODE</value></key>
+    				<value>${UPP_ACCOUNT_GETSMSCODE}</value>
+    			</entry>
+    			<!--创建资金账户  -->
+    			<entry>
+    				<key><value>UPP_CREATE_ACCOUNT_PASSWORD</value></key>
+    				<value>${UPP_CREATE_ACCOUNT_PASSWORD}</value>
+    			</entry>
+    			<!--检验当前账户是否为初始密码  -->
+    			<entry>
+    				<key><value>UPP_ACCOUNT_ISSETPAYPASSWORD</value></key>
+    				<value>${UPP_ACCOUNT_ISSETPAYPASSWORD}</value>
+    			</entry>
+    			
+    		</map>
+    	</constructor-arg>
+    </bean>
+
+</beans>

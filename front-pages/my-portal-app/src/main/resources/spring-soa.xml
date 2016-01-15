@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd "
+	default-lazy-init="false">
+	
+    
+    <bean id="soaProperties"
+		class="com.ctfo.upp.soa.SOAProperties">
+
+		<property name="serviceLocations">
+			<map>
+				<entry key="choosing-policies">
+					<list>
+						<value>com.ctfo.notification:notification-service-locations</value>
+						<value>com.ctfo.base:beas-service-locations</value>
+						<value>com.ctfo.account:account-service-locations</value>
+						<value>com.ctfo.upp:account-service-locations</value>	
+					</list>
+				</entry>
+				<entry key="beas-service-locations">
+					<list>					
+						<value>${beas-service-location-0}</value>
+						<value>${beas-service-location-1}</value>
+						<value>${beas-service-location-2}</value>
+						<value>${beas-service-location-3}</value>					 
+					</list>
+				</entry>
+				<entry key="account-service-locations">
+					<list>					
+						<value>${account-service-location-0}</value>
+						<value>${account-service-location-1}</value>
+						<value>${account-service-location-2}</value>
+						<value>${account-service-location-3}</value>					 
+					</list>
+				</entry>
+				<entry key="notification-service-locations">
+					<list>
+						<value>${notification-service-location-0}</value>
+						<value>${notification-service-location-1}</value>
+						<value>${notification-service-location-2}</value>
+						<value>${notification-service-location-3}</value>
+					</list>
+				</entry>
+			</map>
+
+		</property>
+	</bean>
+	
+
+	
+    
+</beans>

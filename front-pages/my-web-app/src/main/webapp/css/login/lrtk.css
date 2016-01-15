@@ -1,0 +1,25 @@
+/* CSS Document */
+*{margin:0;padding:0;font-size:12px;}
+ul,li,dl,ol{list-style:none;}
+
+.banner{width:960px;overflow:hidden;position:relative;margin:0 auto;}
+.banner_inner{position:relative;height:400px;width:960px;margin:0 auto}
+
+.banner_img{width:20000px}
+.banner_img li{float:left;width:1903px;position:relative}
+.banner_img li.bgli01{background:url(../../images/login/banner_1_bg.png);}
+.banner_img li.bgli02{background:url(../../images/login/banner_1_bg.png);}
+.banner_img li.bgli03{background:url(../../images/login/banner_3_bg.png);}
+
+
+.banner .child1{position:absolute;width:588px;height:425px;left:66px;top:0}
+.banner .child2{position:absolute;width:654px;height:425px;left:343px;top:0}
+.banner_common{position:relative;width:990px;margin:0 auto}
+.banner_pre{position:absolute;top:50%;left:0;margin-top:180px;width:60px;height:60px;cursor:pointer;background:url(../../images/login/banner_btn_left.png) no-repeat;opacity:.5;filter:alpha(opacity=50)}
+.banner_next{position:absolute;top:50%;right:0;margin-top:180px;width:60px;height:60px;cursor:pointer;background:url(../../images/login/banner_btn_right.png) no-repeat;opacity:.5;filter:alpha(opacity=50)}
+.banner_pre:hover, .banner_next:hover{opacity:1;filter:alpha(opacity=100)}
+.banner .control{width:130px;position:absolute;top:370px;left:50%;margin-left:-40px}
+.banner .control li{float:left;margin-left:10px;width:18px;height:18px;border-radius:50%;cursor:pointer;background:#fff}
+.banner .control li a{display:none}
+.banner .control li.current{background:#ff7f02}
+

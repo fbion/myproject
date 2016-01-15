@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+	<!-- 1.码表hession -->
+	<bean name="/com.ctfo.base.intf.internal.ISimpleCodeManager" class="org.springframework.remoting.caucho.HessianServiceExporter"> 
+		<property name="service" ref="SimpleCodeManagerImpl" />
+		<property name="serviceInterface" value="com.ctfo.base.intf.internal.ISimpleCodeManager" />
+	</bean>
+	<!-- 2.参数hession -->
+	<bean name="/com.ctfo.base.intf.internal.ParamManager" class="org.springframework.remoting.caucho.HessianServiceExporter"> 
+		<property name="service" ref="ParamManagerImpl" />
+		<property name="serviceInterface" value="com.ctfo.base.intf.internal.ParamManager" />
+	</bean>
+	<!-- 3.银行卡hession -->
+	<bean name="/com.ctfo.base.intf.internal.BankCardManager" class="org.springframework.remoting.caucho.HessianServiceExporter"> 
+		<property name="service" ref="BankCardManagerImpl" />
+		<property name="serviceInterface" value="com.ctfo.base.intf.internal.BankCardManager" />
+	</bean>
+	<!-- 4.渠道hession -->
+	<bean name="/com.ctfo.base.intf.internal.ChannelManger" class="org.springframework.remoting.caucho.HessianServiceExporter"> 
+		<property name="service" ref="ChannelMangerImpl" />
+		<property name="serviceInterface" value="com.ctfo.base.intf.internal.ChannelManger" />
+	</bean>
+	<!-- 5.平台注册相关hession -->
+	<bean name="/com.ctfo.base.intf.internal.PlatformRegisterManager" class="org.springframework.remoting.caucho.HessianServiceExporter"> 
+		<property name="service" ref="PlatformRegisterManagerImpl" />
+		<property name="serviceInterface" value="com.ctfo.base.intf.internal.PlatformRegisterManager" />
+	</bean>
+	<!-- 6.密钥hession -->
+	<bean name="/com.ctfo.base.intf.internal.SecretKeyManager" class="org.springframework.remoting.caucho.HessianServiceExporter"> 
+		<property name="service" ref="SecretKeyManagerImpl" />
+		<property name="serviceInterface" value="com.ctfo.base.intf.internal.SecretKeyManager" />
+	</bean>
+	<!-- 7.短信hession -->
+	<bean name="/com.ctfo.base.intf.internal.ISmsCodeManager" class="org.springframework.remoting.caucho.HessianServiceExporter"> 
+		<property name="service" ref="smsCodeManager" />
+		<property name="serviceInterface" value="com.ctfo.base.intf.internal.ISmsCodeManager" />
+	</bean>
+	<!-- 8.外部系统接口hession -->
+	<bean name="/com.ctfo.base.intf.external.IExternalSystem" class="org.springframework.remoting.caucho.HessianServiceExporter"> 
+		<property name="service" ref="ExternalSystemImpl" />
+		<property name="serviceInterface" value="com.ctfo.base.intf.external.IExternalSystem" />
+	</bean>
+</beans>

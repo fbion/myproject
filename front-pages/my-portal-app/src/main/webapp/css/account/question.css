@@ -1,0 +1,158 @@
+.cl{
+	clear: both;
+}
+.ques-cont{
+	border:none !important;
+	height: 713px;
+	background: #fff;
+}
+.ques-cont ul li{
+	min-height: 100px;
+	line-height: 100px;
+	padding-left: 30px;
+	border-bottom: 1px solid #eceeef;
+	font-size: 16px;
+	color: #555;
+}
+.ques-cont img{
+	float: left;
+	padding-top: 26px;
+	padding-right: 20px;
+}
+.ques-cont div{
+	float: left;
+	font-size: 18px;
+	line-height: 22px;
+	padding-top: 32px;
+}
+.ques-cont div .span1{
+	display: block;
+	font-size: 12px;
+	color: #ccc;
+	font-family: "宋体";
+}
+.ques-cont div .span2{
+	color: #999;
+}
+.ques-cont div .span3{
+	display: block;
+	font-size: 22px;
+	color: #666;
+}
+.ques-cont input{
+	float: left;
+}
+.ml230{
+	margin-left: 230px;
+}
+.ml195{
+	margin-left: 195px !important;
+}
+.pt29{
+	padding-top: 29px !important;
+}
+.pt31{
+	padding-top: 31px !important;
+}
+.tjbtn2{
+	width:128px !important;
+	margin:32px 0 0 50px;
+}
+
+/*展开收起*/
+.menu-header{
+	margin-left: 227px;
+}
+.arrow{
+	display:block;
+	width:48px;
+	height:14px;
+}
+.up{
+	background: url(../../images/account/down.png) no-repeat center;
+}
+.down{
+	background: url(../../images/account/up.png) no-repeat center;
+}
+.menu div{
+	font-size: 14px !important;
+}
+.menu li{
+	height: 100px;
+	border:none !important;
+}
+.mt20{
+	margin-top: 20px;
+}	
+.ml90{
+	margin-left: 90px;
+}
+.ml160{
+	margin-left: 160px;
+}
+.pt40{
+	padding-top: 40px !important;
+}
+
+/*安全设置页*/
+div.tr{
+	text-align: left !important;
+}
+.safe-inst table{
+	table-layout: fixed;
+	empty-cells: show;
+	border-collapse: collapse;
+	padding-left: 30px !important;
+	font-size: 18px;
+	color: #555;
+	text-align: left;
+}
+table tr{
+	height: 100px;
+	line-height: 100px;
+	border-bottom:1px solid #eceeef;
+}
+table tr:hover{
+	background: #fbfbfb;
+}
+.safe-inst img, .safe-inst div{
+	padding: 0px !important;
+}
+.safe-inst table img{
+	margin:42px 10px 0 30px; 
+}
+table a{
+	font-size: 12px;
+}
+.s-span1{
+	font-size:20px;
+	color: #555;
+}
+.s-span2{
+	font-size: 12px;
+	font-family: "宋体";
+	color: #ccc;
+}
+.s-span3{
+	font-size: 12px;
+	font-family: "宋体";
+	color: #999;
+}
+.s-span4{
+	color: #ff3333;
+}
+.ml0{
+	margin-left: 0px !important;
+}
+.mt39{
+	margin-top:39px !important;
+}
+.pt34{
+	padding-top: 34px !important;
+}
+.ml200{
+	margin-left: 200px;
+}
+.pl35{
+ padding-left:35px !important;
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+	<bean id="ICallServiceMap" class="com.ctfo.sinoiov.mobile.webapi.base.intf.impl.CallServiceImpl">
+		<property name="services">
+			<map>
+				<!-- 修改支付密码(需要旧密码和验证码等信息) -->
+				<entry key="Z000001">
+					<ref bean="modifyPayPasswordManagerImpl" />
+				</entry>
+
+				<!-- 设置支付密码 -->
+				<entry key="Z000002">
+					<ref bean="setPayPasswordManagerImpl" />
+				</entry>
+
+				<!-- 验证支付密码是否正确 -->
+				<entry key="Z000003">
+					<ref bean="isPayPasswordManagerImpl" />
+				</entry>
+
+				<!-- 验证是否有设置支付密码 -->
+				<entry key="Z000004">
+					<ref bean="isSetPayPasswordManagerImpl" />
+				</entry>
+
+				<!-- 获取易宝快捷支付URL(可以使用此接口获取快捷支付URL对油卡进行充值) -->
+				<entry key="Z000005">
+					<ref bean="getFastPayUrlManagerImpl" />
+				</entry>
+
+				<!-- 根据用户Id查询帐户 -->
+				<entry key="Z000006">
+					<ref bean="getAccountInfoByUserIdManagerImpl" />
+				</entry>
+
+				<!-- 银行转账进行账户充值 -->
+				<entry key="Z000007">
+					<ref bean="accountRechargeByTransferManagerImpl" />
+				</entry>
+
+				<!-- 发送短信验证码 -->
+				<entry key="Z000008">
+					<ref bean="getSmsCodeManagerImpl" />
+				</entry>
+
+				<!-- 分页查询账户流水 -->
+				<entry key="Z000009">
+					<ref bean="queryAccountDetailByPageManagerImpl" />
+				</entry>
+
+				<!-- 根据流水ID查询账户流水 -->
+				<entry key="Z000010">
+					<ref bean="getAccountDetailByIdManagerImpl" />
+				</entry>
+
+				<!-- 获取"帐户充值"易宝快捷支付URL地址 -->
+				<entry key="Z000011">
+					<ref bean="getFastPayUrlForAccountRechargeManagerImpl" />
+				</entry>
+
+				<!-- 修改支付绑定的手机号码 -->
+				<entry key="Z000012">
+					<ref bean="modifyMobileNoManagerImpl" />
+				</entry>
+
+				<!-- 创建安全设置 -->
+				<entry key="Z000013">
+					<ref bean="createAccountSafetyManagerImpl" />
+				</entry>
+
+				<!-- 修改安全设置 -->
+				<entry key="Z000014">
+					<ref bean="modifyAccountSafetyManagerImpl" />
+				</entry>
+
+				<!-- 验证安全设置(返回的是验证成功还是失败) 
+				此接口屏蔽去掉
+				<entry key="Z000015">
+					<ref bean="checkAccountSafetyManagerImpl" />
+				</entry>-->
+
+				<!-- 根据账号查询账户设置的安全设置列表 -->
+				<entry key="Z000016">
+					<ref bean="querySecurityQuestionByAccountNoManagerImpl" />
+				</entry>
+
+				<!-- 验证账户相关各种信息(短信\支付密码\单个安全设置)，返回"安全票据"securityTicket -->
+				<entry key="Z000017">
+					<ref bean="validateManagerImpl" />
+				</entry>
+
+				<!-- 重置支付密码(不需要输入旧密码，需要"安全票据")，使用这个接口前需要通过验证Z000017生成"安全票据" -->
+				<entry key="Z000018">
+					<ref bean="modifyPayPasswordByTicketManagerImpl" />
+				</entry>
+
+				<!-- 查询可以选择的密保问题列表 -->
+				<entry key="Z000019">
+					<ref bean="querySecurityQuestionListManagerImpl" />
+				</entry>
+
+				<!-- 查询收款人列表 -->
+				<entry key="Z000020">
+					<ref bean="queryPayeeListManagerImpl" />
+				</entry>
+				
+				<!-- 使用账户余额对油卡进行充值 -->
+				<entry key="Z000021">
+					<ref bean="oilRechargeByAccountManagerImpl" />
+				</entry>
+
+			</map>
+		</property>
+	</bean>
+</beans>

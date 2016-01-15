@@ -1,0 +1,209 @@
+@charset "utf-8";
+/*right*/
+/*right-list*/
+.next-lists-form table td.nextsel{
+ color: #000000;
+ line-height: 20px;
+ padding: 7px 5px;
+ width: 336px;
+}
+.next-lists-form table td.mark input{
+ border: 1px solid #d5d9de;
+ color: #b4b4b4;
+ height: 12px;
+ padding: 8px 10px;
+ width:180px;
+}
+.lists-form table td.mark .mark_a{
+ color:#006699;
+ margin-left:7px;
+}
+.next-lists-form  table td.nextsel input[type="button"]{
+ width:214px;
+ height:36px;
+ color:#fff;
+ background-color:#ff7200;
+ border:0px;
+ border-radius:2px 2px 2px 2px;
+ cursor:pointer;
+ margin-top:23px;
+ font-weight:bold;
+ font-size:14px;
+}
+/*下拉框美化*/
+.rightsideBar .select_all .select_box{
+ border: 1px solid #d5d9de;
+ color: #b4b4b4;
+ height: 30px;
+ position: relative;
+ background-color:#fff;
+}
+.rightsideBar .select_allbr .select_box{
+ width: 120px;
+}
+.rightsideBar .select_all .select_showbox{
+ height: 30px;
+ line-height:30px;
+ padding-left: 10px;
+}
+.rightsideBar .select_allbr .select_showbox{
+ background: url(../../images/pc/icon2.png) no-repeat 95px 12px;
+}
+.rightsideBar .select_all .select_option{
+ border: 1px solid #b0a296;
+ border-top: none;
+ display: none;
+ position: absolute;
+ top: 31px; left:-1px;
+ background-color:#fff;
+ z-index:9999;
+}
+.rightsideBar .select_allbr .select_option{
+ width:120px;
+}
+/*下拉框美化结束*/
+/*开户前台*/
+.lists-form table td.nextsel .nextsela{
+ width:80px;
+ background-color:#ccc;
+ display:inline-block;
+ padding:5px 0px 5px 0px;
+ margin-left:6px;
+ text-align:center;
+ border-radius:3px 3px 3px 3px;
+}
+/*收银台*/
+.oil_record_title{
+ height:37px;
+ line-height:37px;
+ border-bottom:2px solid #ff7200;
+}
+.record_title_tab{
+ line-height:36px;
+}
+.record_title_tab a{
+ display:inline-block;
+ padding:0px 20px 0px 20px;
+ color:#666;
+ border:1px solid #e8e8e8;
+ border-bottom:0px;
+}
+.record_title_tab a:hover,.record_title_tab .title_tabcurr{
+ background-color:#ff7200;
+ color:#fff;
+ text-decoration:none;
+ border:1px solid #ff7200;
+ border-bottom:0px;
+}
+.lists-form table td.nextselnum{
+ width:450px;
+}
+.lists-form table td.nextselnum input[type="text"]{
+	background-color:#ffffff;
+ 	width:180px;
+}
+.lists-form table td.Barsize{
+ font-size:14px;
+}
+/*充值页面*/
+.sideBar_file {
+border: 1px solid #e9e9e9;
+padding: 0px 20px 20px 20px;
+}
+.sideBar_file h3 {
+font-weight: bold;
+color: #333;
+line-height: 40px;
+}
+.sideBar_file p{
+ line-height:28px;
+}
+.lists-form table td.nextselnum2{
+    width: 300px;
+}
+.lists-form table td.Barsizered{
+ color:#FF0000;
+}
+.Barbank{
+ padding-left:30px;
+}
+.Barbank label{
+ float:left;
+ width:250px;
+ display: block;
+ cursor: pointer;
+ padding-bottom:15px;
+}
+.Barbank li input{
+ vertical-align:middle;
+}
+.Barbankbtn input{
+ width: 214px;
+height: 36px;
+color: #fff;
+background-color: #ff7200;
+border: 0px;
+border-radius: 2px 2px 2px 2px;
+cursor: pointer;
+margin-top: 23px;
+font-weight: bold;
+font-size: 14px;
+margin-left:30px;
+}
+/*单选按钮样式*/
+.label_radio input {
+  margin-right: 5px;
+}
+.label_radio {
+  padding-left: 34px;
+}
+.label_radio{
+  background: url(../../images/pc/checkbox-radio-bg2.png) no-repeat;
+}
+.label_radio {
+  background-position: 0 10px;
+}
+label.c_on {
+  background-position: 0 -150px;
+}
+label.r_on {
+  background-position: 0 -40px;
+}
+.label_radio input {
+  position: absolute;
+  left: -9999px;
+}
+/*提示页面*/
+.Barprompt_main{
+ text-align:center;
+ padding-left:256px;
+}
+.Barprompt_main2{
+ padding-left:144px;
+}
+.Barprompt li{
+ text-align:left;
+ padding-left:10px;
+}
+.Barprompt .Barbankbtnli{
+ text-align:center;
+}
+.Barprompt .Barbankbtn input{
+ margin-left:0px;
+}
+.Barprompt .Barbankbtn input.Barbankbtn1,.Barprompt .Barbankbtn input.Barbankbtn2{
+ width:101px;
+ border-radius: 5px 5px 5px 5px;
+}
+.Barprompt .Barbankbtn input.Barbankbtn1{
+ margin-left:0px;
+ border: 1px solid #e0e0e0;
+ background-color: #fff;
+ color: #ff7200;
+}
+.Barprompt .Barbankbtn input.Barbankbtn2{
+ background-color: #ff7200;
+ color: #fff;
+ border: 0px;
+ margin-left:10px;
+ }

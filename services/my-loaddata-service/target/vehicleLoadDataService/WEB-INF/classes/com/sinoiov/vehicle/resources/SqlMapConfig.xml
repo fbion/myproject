@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings useStatementNamespaces="true" />
+	<sqlMap resource="com/ctfo/upp/baseservice/daox/sqlmap/Generic_SqlMap.xml" />
+	<!-- base service dao's bean -->
+	<sqlMap resource="com/ctfo/upp/baseservice/dao/sqlmap/BankCardInfo_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/baseservice/dao/sqlmap/ChannelInfo_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/baseservice/dao/sqlmap/SimpleCode_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/baseservice/dao/sqlmap/UPParam_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/baseservice/dao/sqlmap/UPPlatform_SqlMap.xml" />
+	<sqlMap resource="com/ctfo/upp/baseservice/dao/sqlmap/UPPlatformCallbackUrl_SqlMap.xml" />
+	<!--webAPP账户管理-银行卡查询SQL -->
+	<sqlMap resource="com/ctfo/upp/baseservice/daox/sqlmap/BankCardInfoExtend_SqlMap.xml" />
+</sqlMapConfig>

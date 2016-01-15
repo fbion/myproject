@@ -1,0 +1,358 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------CSS 通用属性----------*/
+body,html{margin:0; padding:0; font-size:12px; font-family:Arial, Helvetica, sans-serif,"宋体"; width:100%; height:100%; overflow-x:hidden;}
+ul, p,h1,h2,h3,h4,h5,li{margin:0px; padding:0;list-style:none;}
+label, button, input[type="submit"], input[type="button"] {cursor:pointer;}
+.clear{clear:both;}
+.float_lef{float:left; display:inline;}
+.float_rig{float:right; display:inline;}
+img{border:none; margin:0; padding:0;}
+.font_wei{font-weight:bold;}
+.clearfix{zoom:1;}
+.clearfix:after{content: '\20'; display:block; clear:both;}
+.marg_lef5{margin-left:5px;}
+.marg_rig5{margin-right:5px;}
+.marg_lef10{margin-left:2px;}
+.padd10{padding:10px;}
+.width100{width:100%;}
+.width80{width:80%;}
+.width30{width:30%;}
+a{color:#2c6795; text-decoration:none; font-weight:normal;}
+a:link{color:#2c6795; text-decoration:none; font-weight:normal;}
+a:visited {color:#2c6795; text-decoration:none; font-weight:normal;}
+a:hover{color:#2c6795; text-decoration:underline; font-weight:normal;}
+a:active{color:#2c6795; text-decoration:none; font-weight:normal;}
+/*----------end CSS 通用属性----------*/
+
+/*topStart*/
+.chehou{
+	height:60px;
+	background:url(../../images/welcome/top_Bj01.png) repeat-x;
+}
+.chehouBj{
+	width:100%;
+	height:60px;
+	background:url(../../images/welcome/top_Bj02.png) no-repeat;
+}
+.logo{
+	width:295px;
+	height:52px;
+	background:url(../../images/welcome/logo.png) no-repeat;
+	float:left;
+	margin-top:5px;
+	margin-left:20px;
+}
+.chehouFont{
+	color:#151515;
+	float:right;
+	line-height:20px;
+	margin:5px 5px 0px 0;
+}
+/*chehouMenu*/
+.chehouMenu{
+	float:right;
+	margin-right:5px;
+	min-width:200px;
+	margin-top:15px;
+}
+.chehouMenu ul {
+	margin:0;
+	padding:0;
+}
+
+.chehouMenu li {
+	float:left;
+	margin:0 10px;
+	width:72px;
+	height:20px;
+	list-style-type: none;
+	text-align:center;
+	color:white;
+	line-height:25px;
+}
+
+.chehouMenu li a:link {
+	color:white;
+	text-decoration:none;
+}
+
+.chehouMenu li a:visited {
+	color:white;
+	text-decoration:none;
+}
+/*topEnd*/
+
+/*mainStart*/
+.main{
+	width:100%;
+	height:100%;
+	background:#d7f5ff url(../../images/welcome/top_Bj03.png) repeat-x 0px 53px;
+}
+.subNav{
+	height:26px;
+	background:url(../../images/welcome/top_Bj04.png) repeat-x;
+}
+.chehouBtn{
+	width:137px;
+	height:26px;
+	background:url(../../images/welcome/btn01.png) no-repeat;
+	line-height:26px;
+	text-align:center;
+	color:#030409;
+}
+.daibanshixiang{
+	width:980px;
+	margin:0 auto;
+	clear:both;
+}
+.dbsxContent{
+	height:221px;	
+	margin-top:20px;
+	display:inline-block;
+}
+.dbsxLeft{
+	width:312px;
+	height:221px;
+	
+	background:url(../../images/welcome/top_Bj05.png) no-repeat;
+	margin-right:12px;
+	float:left;	
+}
+.dbsxRight{
+	width:312px;
+	height:221px;
+	background:url(../../images/welcome/top_Bj05.png) no-repeat;
+	float:left;
+}
+.dbsxTop{
+	height:50px;
+	clear:both;
+}
+.dbsxIcon{
+	width:50px;
+	height:50px;
+	float:left;
+}
+.dbsxFont{
+	width:230px;
+	height:50px;
+	line-height:62px;
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+	color:#070a45;
+	float:left;
+}
+.redFont{
+	color:#e71f19;
+}
+.dbsxIn{
+	width:298px;
+	height:70px;
+	margin:0 auto;
+	margin-top:13px;
+}
+.dbsxInContent{
+	width:84px;
+	height:70px;
+	margin-right:13px;
+	float:left;
+}
+.dbsxInContentMr{
+	width:84px;
+	height:70px;
+	float:left;
+}
+.gerenhuiyuan{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon01.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.qiyehuiyuan{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon02.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.fanlicuxiao{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon03.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.shanghushenhe{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon04.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.hetongdaoqi{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon05.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.hetongshenhe{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon06.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.mendianshenhe{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon07.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.fenchengcuxiao{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon08.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.pos{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon09.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.weixiugongdan{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon10.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.jiuyuangongdan{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon11.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.kehuzixun{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon12.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.xiaofeijiesuan{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon13.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.fanlijiesuan{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon14.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.fcjs{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon15.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.lmkcz{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon16.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.zkcz{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon17.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.kaikashenqing{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon18.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.huankashenqing{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon19.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.tuikashenqing{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon20.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.xiaoxitongzhi{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon21.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.duanxinshenhe{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon22.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.yhxx{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon23.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.tupianshenhe{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon24.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.zixunshenhe{
+	width:45px;
+	height:45px;
+	background:url(../../images/welcome/icon25.png) no-repeat 0px 5px;
+	margin:0 auto;
+}
+.dbsxInTuFont{
+	line-height:20px;
+	text-align:center;
+	color:#000000;
+}
+.redDot{
+	width:15px;
+	height:14px;
+	line-height:14px;
+	text-align:center;
+	background:url(../../images/welcome/icon26.png) no-repeat;
+	color:#ffffff;
+	margin-left:26px;
+}
+.redDot-3{
+	width:21px;
+	height:14px;
+	line-height:14px;
+	text-align:center;
+	background:url(../../images/welcome/hundred.png) no-repeat;
+	color:#ffffff;
+	margin-left:26px;
+}
+.redDot-4{
+	width:29px;
+	height:14px;
+	line-height:14px;
+	text-align:center;
+	background:url(../../images/welcome/thousond.png) no-repeat;
+	color:#ffffff;
+	margin-left:26px;
+}
+.redDot-5{
+	width:35px;
+	height:14px;
+	line-height:14px;
+	text-align:center;
+	background:url(../../images/welcome/ten-thousond.png) no-repeat;
+	color:#ffffff;
+	margin-left:26px;
+}
+/*mainEnd*/

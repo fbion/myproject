@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<display-name>upp-portal-app</display-name>
+
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	 
+	<!--  防止sql注入与跨站脚本攻击过滤器  -->
+	<filter>
+		<filter-name>ParamsFilter</filter-name>
+		<filter-class>com.sinoiov.upp.portal.filter.ParamsFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ParamsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+	<!--  url 权限过滤  -->
+	<!-- <listener>
+		<listener-class>com.sinoiov.upp.portal.filter.AccessSandboxFilter</listener-class>
+	</listener>
+	<filter>
+		<filter-name>accessSandboxFilter</filter-name>
+		<filter-class>com.sinoiov.upp.portal.filter.AccessSandboxFilter</filter-class>
+		<init-param>
+			<param-name>systemSign</param-name>
+			<param-value>com.sinoiov.upp.portal</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>accessSandboxFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+	 
+	<!-- <listener>
+  		  <listener-class>org.jasig.cas.client.session.SingleSignOutHttpSessionListener</listener-class>
+	</listener>
+	  
+  	<filter>
+  		 <filter-name>CAS Single Sign Out Filter</filter-name>
+  		 <filter-class>org.jasig.cas.client.session.SingleSignOutFilter</filter-class>
+	</filter>
+	<filter-mapping>
+  		 <filter-name>CAS Single Sign Out Filter</filter-name>
+  		 <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+    	<filter-name>CAS Authentication Filter</filter-name>
+    	<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+   		 <init-param>
+     		   <param-name>targetBeanName</param-name>
+     		   <param-value>myAuthenticationFilter</param-value>
+   		 </init-param>
+  	</filter>
+  	<filter-mapping>
+    	<filter-name>CAS Authentication Filter</filter-name>
+    	<url-pattern>/pages/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+    	<filter-name>CAS Authentication Filter</filter-name>
+    	<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+    	<filter-name>CAS Validation Filter</filter-name>
+    	<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+   		 <init-param>
+     		   <param-name>targetBeanName</param-name>
+     		   <param-value>myTicketValidationFilter</param-value>
+   		 </init-param>
+  	</filter>
+
+  	<filter-mapping>
+    	<filter-name>CAS Validation Filter</filter-name>
+    	<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring-all.xml</param-value>
+	</context-param>
+
+		<servlet>
+		<servlet-name>springMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-all.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springMVC</servlet-name>
+		<url-pattern>*.action</url-pattern>
+	</servlet-mapping>
+
+ 	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping> 
+
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.jpg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.js</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.css</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.gif</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.png</url-pattern>
+	</servlet-mapping>
+	
+	 <!-- 图片验证码开始 -->  
+     <servlet>  
+         <servlet-name>imgCheckCode</servlet-name>  
+         <servlet-class>com.sinoiov.upp.portal.servlet.ImageServlet</servlet-class>  
+     </servlet>  
+   
+     <servlet-mapping>  
+            <servlet-name>imgCheckCode</servlet-name>  
+            <url-pattern>/imgCheckCode</url-pattern>  
+     </servlet-mapping>  
+     <!-- 图片验证码结束 -->  
+	
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/pages/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/pages/500.jsp</location>
+	</error-page>
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+</web-app>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TB_UPP_BOOK_ACCOUNT_INFO_EXTEND">
+
+	<resultMap id="abatorgenerated_bookAccountExtendMapResult" class="com.ctfo.account.daox.beans.AccountDetailExtend">
+		<!-- the accountDetail table all column -->
+		<result column="ID" jdbcType="VARCHAR" property="id" />
+	    <result column="INSIDE_EXTERNAL_NO" jdbcType="VARCHAR" property="insideExternalNo" />
+	    <result column="BOOKACCOUNT_TYPE" jdbcType="VARCHAR" property="bookaccountType" />
+	    <result column="INSIDE_ACCOUNT_NO" jdbcType="VARCHAR" property="insideAccountNo" />
+	    <result column="ACCOUNT_SUBJECT" jdbcType="VARCHAR" property="accountSubject" />
+	    <result column="ACCOUNT_TIME" jdbcType="NUMBER" property="accountTime" />
+	    <result column="ACCOUNT_MONEY" jdbcType="NUMBER" property="accountMoney" />
+	    <result column="ACCOUNT_DATE" jdbcType="VARCHAR" property="accountDate" />
+	    <result column="TRADE_EXTERNAL_NO" jdbcType="VARCHAR" property="tradeExternalNo" />
+	    <result column="EXTERNAL_ACCOUNT_NO" jdbcType="VARCHAR" property="externalAccountNo" />
+	    <result column="ACCOUNT_ID" jdbcType="VARCHAR" property="accountId" />
+	    <result column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+	    <result column="ACCOUNT_SUBAREA_TIME" jdbcType="TIMESTAMP" property="accountSubareaTime" />
+	    <result column="STORE_CODE" jdbcType="VARCHAR" property="storeCode" />
+		
+		<result column="ACCOUNT_TYPE" jdbcType="VARCHAR" property="accountType" />
+		<result column="TOTAL_BALANCE" jdbcType="NUMBER" property="totalBalance" />
+		<result column="ACCOUNT_STATUS" jdbcType="VARCHAR" property="accountStatus" />
+		<result column="OWNER_USER_ID" jdbcType="VARCHAR" property="ownerUserId" />
+		<result column="OWNER_LOGIN_NAME" jdbcType="VARCHAR" property="ownerLoginName" />
+    </resultMap>
+	<sql id="queryBookAccountSql">
+		select info.ID,
+		       info.INSIDE_EXTERNAL_NO,
+		       info.BOOKACCOUNT_TYPE,
+		       info.INSIDE_ACCOUNT_NO,
+		       info.ACCOUNT_SUBJECT,
+		       info.ACCOUNT_TIME,
+		       info.ACCOUNT_MONEY,
+		       info.ACCOUNT_DATE,
+		       info.TRADE_EXTERNAL_NO,
+		       info.EXTERNAL_ACCOUNT_NO,
+		       info.ACCOUNT_ID,
+		       info.OPERATOR_ID,
+		       info.ACCOUNT_SUBAREA_TIME,
+		       info.STORE_CODE,
+		       
+		       acc.ACCOUNT_TYPE,
+		       acc.TOTAL_BALANCE,
+		       acc.ACCOUNT_STATUS,
+		       acc.OWNER_USER_ID,
+		       acc.OWNER_LOGIN_NAME
+		 FROM TB_UPP_BOOK_ACCOUNT_INFO info LEFT JOIN TB_UPP_CASH_ACCOUNT acc ON info.ACCOUNT_ID = acc.ID
+		<include refid="TB_UPP_BOOK_ACCOUNT_INFO_EXTEND.abatorgenerated_paginateBookAccount_Where_Clause" />
+		ORDER BY info.ACCOUNT_DATE DESC nulls last
+	</sql>
+	<sql id="abatorgenerated_paginateBookAccount_Where_Clause">
+        <dynamic prepend="where">
+        	<!--ID-->
+        	<isNotEmpty prepend="and" property="id">    
+				info.ID= = #id#  
+			</isNotEmpty>
+        	<!--流水号 -->
+			<isNotEmpty prepend="and" property="tradeExternalNo">    
+				info.TRADE_EXTERNAL_NO= = #tradeExternalNo#  
+			</isNotEmpty>
+			<!--记账类型 -->  
+			<isNotEmpty prepend="and" property="bookaccountType">  
+				info.BOOKACCOUNT_TYPE= #bookaccountType#  
+			</isNotEmpty>
+			<!--科目-->
+			<isNotEmpty prepend="and" property="collectMoneyAccountNo">  
+				info.ACCOUNT_SUBJECT= #accountSubject# 
+			</isNotEmpty>
+			<!--账户编码 -->
+			<isNotEmpty prepend="and" property="insideExternalNo">  
+				acc.inside_account_no like '%'|| #insideExternalNo# ||'%'  
+			</isNotEmpty>
+			<!--账户状态:中交账户交易流水和普通账户交易流水，0-初始，未实名认证;1-正常;2-锁定，被锁定;3-吊销 -->
+			<isNotEmpty prepend="and" property="accountStatus">  
+				acc.ACCOUNT_STATUS = #accountStatus#  
+			</isNotEmpty>
+			<!--账户类型:0-中交 ;非0为普通账户-->
+			<isNotEmpty prepend="and" property="zjStatus">  
+				acc.account_type = #zjStatus#  
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="ptStatus">  
+				acc.account_type != #ptStatus#  
+			</isNotEmpty> 
+			<!--交易开始时间-记账时间--> 
+			<isNotEmpty prepend="and" property="startTime">
+				<![CDATA[ info.ACCOUNT_TIME >= #startTime# ]]>
+			</isNotEmpty>
+			<!--交易结束时间-记账时间-->
+			<isNotEmpty prepend="and" property="endTime">
+				<![CDATA[ info.ACCOUNT_TIME <= #endTime# ]]>
+			</isNotEmpty>
+		</dynamic> 
+    </sql>
+    
+	<select id="queryBookAccountList" parameterClass="java.util.Map" resultMap="abatorgenerated_bookAccountExtendMapResult" remapResults="true">
+		<include refid="Generic.oracle_Pagination_Head" />
+		<include refid="queryBookAccountSql" />
+		<include refid="Generic.oracle_Pagination_Tail" />
+	</select>
+
+	<select id="totalCountBookAccountList" parameterClass="java.util.Map"
+		resultClass="int" remapResults="true">
+		select count(*) from (
+		<include refid="queryBookAccountSql" />
+		)
+	</select>
+
+</sqlMap>

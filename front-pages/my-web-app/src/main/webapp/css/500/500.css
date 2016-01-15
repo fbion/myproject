@@ -1,0 +1,304 @@
+@CHARSET "UTF-8";
+
+/*------------------mainStart------------------*/
+.main{
+	width:99.8%;
+	height:658px;
+	border:1px solid #1d3744;
+	clear:both;
+}
+.left{
+	width:141px;
+	height:658px;
+	background:#e2f8ff;
+	border-right:1px solid #dee8f2;
+	float:left;
+	display:inline-block;
+}
+.leftTop{
+	height:25px;
+	line-height:25px;
+	color:#6c828f;
+	font-weight:bold;
+}
+.leftTopIcon{
+	width:6px;
+	height:9px;
+	background:url(./icon01.png) no-repeat;
+	float:left;
+	margin:8px 5px 0px 10px;
+}
+.leftLine{
+	border-top:1px solid #d7e1ea;
+	border-bottom:1px solid #f7ffff;
+}
+/*leftleftMenuStart*/
+.leftleftMenu {font-family:"宋体"Verdana, Geneva, sans-serif; width:141px; height:150px; position:relative; margin:0; font-size:12px; margin:50px 0; color:#008bd3;}
+.leftMenu ul li a{display:block; text-decoration:none; color:#008bd3; width:141px; height:35px; text-align:center; color:#008bd3; border-top:1px solid #d7e1ea; border-bottom:1px solid #f7ffff; line-height:35px; font-size:12px; overflow:hidden;}
+.leftMenu ul {padding:0; margin:0;list-style-type: none; }
+.leftMenu ul li {float:left; margin-right:1px; position:relative; color:#008bd3;}
+.leftMenu ul li a img {width:23px; height:22px;}
+.leftMenu ul li ul {display: none;}
+/* specific to non IE browsers */
+.leftMenu ul li:hover ul {display:block; position:absolute; top:0; left:105px; width:105px;}
+.leftMenu ul li:hover a.hide {background:url(./newWl_bj01.png) repeat-x; color:#fff;}
+
+/*leftleftMenuEnd*/
+
+.right{
+	height:658px;
+	background:#e7f6ff;
+	margin-left:141px;
+}
+.rightTopBackground{
+	width:100%;
+	height:31px;
+	background:url(./rightTopBackground.png) repeat-x;
+}
+.rightTopFont{
+	line-height:31px;
+	color:#676858;
+	float:left;
+	padding-left:10px;
+}
+.blueFont{
+	color:#008bd3;
+}
+.rightTopWelcome{
+	width:100px;
+	line-height:31px;
+	float:right;
+}
+.rightTopIcon{
+	width:14px;
+	height:16px;
+	background:url(./newWl_icon01.png) no-repeat;
+	float:left;
+	margin:7px 5px 0px 0px;
+}
+.welcomeFont{
+	color:#008bd3;
+	float:left;
+}
+/*------------------mapEnd------------------*/
+
+/*500start*/
+.common_mistake{
+	width:100%;
+	height:641px;
+	background:url(./500background.png) repeat-x;
+	padding-top:77px;
+}
+.common_mistakeMain{
+	width:686px;
+	height:414px;
+	margin:0 auto;
+}
+.common_mistakeFont{
+	width:481px;
+	height:52px;
+	background:url(./500font.png) no-repeat;
+	margin:0 auto;
+}
+.common_errorCode{
+	height:22px;
+	font-size:16px;
+	text-align:right;
+	font-weight:bold;
+	color:#747474;
+	margin-top:24px;
+	margin-right:84px;
+	margin-bottom:47px;
+	display:block;
+}
+.common_blackFont{
+	width:149px;
+	height:15px;
+	line-height:15px;
+	font-size:14px;
+	font-weight:bold;
+	color:#000000;
+	margin-left:350px;
+	display:block;
+}
+.common_main{
+	width:686px;
+	height:360px;
+	clear:both;
+}
+.common_mainLeft{
+	width:350px;
+	height:228px;
+	float:left;
+}
+.common_tu{
+	width:271px;
+	height:228px;
+	background:url(./500tu.png) no-repeat;
+	margin:0 auto;
+}
+.common_mainRight{
+	width:336px;
+	height:300px;
+	float:left;
+}
+.common_mainRightFont{
+	font-size:14px;
+	color:#757575;
+	line-height:30px;
+	margin-top:50px;
+	margin-bottom:53px;
+	display:block;
+}
+.common_backHomepage{
+	width:78px;
+	height:23px;
+	background:url(./500btn.png) no-repeat;
+	margin-left:230px;
+	margin-bottom:50px;
+
+}
+.common_help{
+	font-family:"宋体"Verdana, Geneva, sans-serif;
+	font-size:12px;
+	color:#747474;
+	margin-left:40px;
+}
+.common_red{
+	color:#ff0000;
+}
+/*500end*/
+
+/*打印start*/
+.print{
+	width:100%;
+	height:656px;
+	clear:both;
+}
+.printLeft{
+	width:141px;
+	height:656px;
+	background:#e2f8ff;
+	border-right:1px solid #dee8f2;
+	float:left;
+	display:inline-block;
+}
+.printRight{
+	height:656px;
+	background:#ffffff;
+	margin-left:141px;
+}
+.printLeftTop{
+	height:25px;
+	line-height:25px;
+	color:#6c828f;
+	font-weight:bold;
+}
+.printTopIcon{
+	width:6px;
+	height:9px;
+	background:url(./icon01.png) no-repeat;
+	float:left;
+	margin:8px 5px 0px 10px;
+}
+.printLine{
+	border-top:1px solid #d7e1ea;
+	border-bottom:1px solid #f7ffff;
+}
+/*打印leftMenuStart*/
+.printMenu ul li a{display:block; text-decoration:none; color:#008bd3; width:141px; height:22px; text-align:center; color:#008bd3; line-height:22px; font-size:12px; overflow:hidden;}
+.printMenu ul {padding:0; margin:0;list-style-type: none; }
+.printMenu ul li {float:left; margin-right:1px; position:relative; color:#008bd3;}
+.printMenu ul li a img {width:23px; height:22px;}
+.printMenu ul li ul {display: none;}
+/**/
+.printMenu ul li:hover ul {display:block; position:absolute; top:0; left:105px; width:105px;}
+.printMenu ul li:hover a.hide {background:#309ae6 repeat-x; color:#fff;}
+/*打印leftMenuEnd*/
+.printRightTop{
+	width:100%;
+	height:31px;
+	background:url(./rightTopBackground.png) repeat-x;
+}
+.printSubNav{
+	width:270px;
+	height:31px;
+	float:right;
+}
+.printSubNavFont{
+	width:100px;
+	line-height:31px;
+	color:#847f74;
+	font-size:12px;
+	float:left;
+}
+.printPage{
+	font-size:12px;
+	color:#e50014;
+}
+.printSubNavFunctionModule{
+	width:170px;
+	height:31px;
+	float:left;
+}
+.markingPunch{
+	width:16px;
+	height:16px;
+	background:url(./print.png) -92px -0 no-repeat;
+	float:left;
+	margin:8px 6px 0px 0px;
+}
+.excel{
+	width:16px;
+	height:16px;
+	background:url(./print.png) -138px -0 no-repeat;
+	float:left;
+	margin:8px 6px 0px 0px;
+}
+.mode{
+	width:16px;
+	height:16px;
+	background:url(./print.png) -184px -0 no-repeat;
+	float:left;
+	margin:8px 6px 0px 0px;
+}
+.word{
+    width:16px;
+	height:16px;
+	background:url(./print.png) -230px -0 no-repeat;
+	float:left;
+	margin:8px 6px 0px 0px;	
+}
+.pageLeft{
+	width:9px;
+	height:12px;
+	background:url(./print.png) -276px -0 no-repeat;
+	float:left;
+	margin:10px 6px 0px 0px;
+}
+.pageLeftOne{
+    width:9px;
+	height:9px;
+	background:url(./print.png) -315px -0 no-repeat;
+	float:left;
+	margin:11px 6px 0px 0px;	
+}
+.pageRightOne{
+	width:9px;
+	height:9px;
+	background:url(./print.png) -354px -0 no-repeat;
+	float:left;
+	margin:11px 6px 0px 0px;
+}
+.pageRight{
+	width:9px;
+	height:12px;
+	background:url(./print.png) -393px -0 no-repeat;
+	float:left;
+	margin:10px 2px 0px 0px;
+}
+.printContent{
+	width:100%;
+}
+/*打印End*/
+

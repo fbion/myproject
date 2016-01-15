@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN" "http://ibatis.apache.org/dtd/abator-config_1_0.dtd" >
+<abatorConfiguration >
+  <abatorContext generatorSet="com.ctfo.ibatis.abator.extend.Java2OracleGeneratorSet">
+    <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.110.170:1521:orcl" userId="upp" password="upp" >
+     <classPathEntry location="/Users/malongqing/Documents/IDE/DriveClass/ojdbc6.jar" />
+   </jdbcConnection>
+    
+   
+  <!--
+  	<javaModelGenerator  targetPackage="com.ctfo.account.dao.beans" targetProject="upp-account-interface/generated_src" >
+    	<property name="rootClass" value="com.ctfo.upp.models.BaseSerializable" />
+    	<property name="enableSubPackages" value="false" />
+    </javaModelGenerator>
+    
+    <sqlMapGenerator targetPackage="com.ctfo.upp.accountservice.dao.sqlmap.account" targetProject="upp-account-service/src/main/resources" />
+    
+    <daoGenerator targetPackage="com.ctfo.upp.accountservice.account.dao" targetProject="upp-account-service/dao_src" type="SPRING-ORACLE">
+   
+    </daoGenerator>
+  	-->
+    
+    
+    
+     <javaModelGenerator  targetPackage="com.ctfo.payment.dao.beans" targetProject="upp-payment-interface/generated_src" >
+    	<property name="rootClass" value="com.ctfo.upp.models.BaseSerializable" />
+    	<property name="enableSubPackages" value="false" />
+    </javaModelGenerator>
+    
+    <sqlMapGenerator targetPackage="com.ctfo.upp.accountservice.dao.sqlmap.payment" targetProject="upp-account-service/src/main/resources" />
+    
+    <daoGenerator targetPackage="com.ctfo.upp.accountservice.payment.dao" targetProject="upp-account-service/dao_src" type="SPRING-ORACLE">
+   	
+   	</daoGenerator>
+  	
+    
+    <!--base table-->
+    <!--table schema="UPP" tableName="TB_UPP_STORE_MESS" modelType="flat" domainObjectName="UPPlatform">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table-->
+    <!--table schema="UPP" tableName="TB_UPP_PARAM" modelType="flat" domainObjectName="UPParam">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+     <table schema="UPP" tableName="TB_UPP_STORE_URL_MESS" modelType="flat" domainObjectName="UPPlatformCallbackUrl">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table-->
+    
+   
+    
+    <!--table schema="UPP" tableName="TB_UPP_PAY_TRADE" modelType="flat" domainObjectName="PaymentTrade">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_CONFIRM_DATE" property="payConfirmDate" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ORDER_AMOUNT" property="orderAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_POUND_SCALE" property="payPoundScale" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+    </table>
+    <table schema="UPP" tableName="TB_UPP_PAY_TRADE_HISTORY" modelType="flat" domainObjectName="HPaymentTrade">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_CONFIRM_DATE" property="payConfirmDate" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ORDER_AMOUNT" property="orderAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_POUND_SCALE" property="payPoundScale" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="RECORD_CREATE_TIME" property="recordCreateTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+    </table>
+	-->
+    <!--table schema="UPP" tableName="TB_TAKECASH_APPLY" modelType="flat" domainObjectName="WithdrawCashApply">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table-->
+   
+    <!--table schema="UPP" tableName="TB_UPP_ACCOUNT_FROZEN_DETAIL" modelType="flat" domainObjectName="AccountFrozenDetail">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="FROZEN_AMOUNT" property="frozenAmount" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="UNFROZEN_AMOUNT" property="unfrozenAmount" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />  
+    </table-->
+    
+    <!--account table-->
+    
+    <!--table schema="UPP" tableName="TB_UPP_AUTHENTICA_APPLY" modelType="flat" domainObjectName="AuthenApplyInfo">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="APPLY_TIME" property="applyTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_CONFIRM_DATE" property="payConfirmDate" javaType="Long" jdbcType="NUMBER" />
+    </table-->
+    
+    <!-- 
+    <table schema="UPP" tableName="TB_UPP_SUB_ACCOUNT" modelType="flat" domainObjectName="SpecialAccount">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="TOTAL_BALANCE" property="totalBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="UNABLE_TAKECASH_BALANCE" property="unableTakecashBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="FROZEN_BALANCE" property="frozenBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="USABLE_BALANCE" property="usableBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+    </table>
+    
+    
+    
+    <table schema="UPP" tableName="TB_UPP_AUTHENTICA_MESS" modelType="flat" domainObjectName="CertifiedInfo">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="AUTHENTICA_TIME" property="authenticaTime" javaType="Long" jdbcType="NUMBER" />
+    </table-->
+    
+    
+    
+    <!--
+    <table schema="UPP" tableName="TB_UPP_SUB_BOOK_ACCOUNT_INFO" modelType="flat" domainObjectName="SpecialAccountDetail">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="ACCOUNT_TIME" property="accountTime" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="ACCOUNT_MONEY" property="accountMoney" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+    <table schema="UPP" tableName="TB_UPP_SUB_ACCOUNT_HISTORY" modelType="flat" domainObjectName="HSpecialAccount">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="TOTAL_BALANCE" property="totalBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="UNABLE_TAKECASH_BALANCE" property="unableTakecashBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="FROZEN_BALANCE" property="frozenBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="USABLE_BALANCE" property="usableBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+      <columnOverride column="RECORD_CREATE_TIME" property="recordCreateTime" javaType="Long" jdbcType="NUMBER" />
+    </table-->
+    
+        
+    <!--reconciliation table-->
+    <!--
+    
+    <table schema="UPP" tableName="TB_UPP_CHECK_ACC_DIVERGENCE" modelType="flat" domainObjectName="UnbalanceDetailWithThirdPartyAccount">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+     
+    <table schema="UPP" tableName="TB_UPP_CHECK_TRADE_DIVERGENCE" modelType="flat" domainObjectName="UnbalanceTradeWithThirdPartyAccount">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>  
+    
+    <table schema="UPP" tableName="TB_UPP_CHECKACC_HANDLE" modelType="flat" domainObjectName="UnbalanceHandlerWithThirdPartyAccount">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    
+    <table schema="UPP" tableName="TB_UPP_CHECK_PAY_ACCOUNT" modelType="flat" domainObjectName="DetailWithThirdPartyAccount">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    
+    
+    <table schema="UPP" tableName="TB_UPP_CHECK_ACCOUNT_BATCH" modelType="flat" domainObjectName="ReconOfBatch">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    
+    
+    <table schema="UPP" tableName="TB_UPP_BOOK_DAY_ACCOUNT" modelType="flat" domainObjectName="AccountingDay">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+       <columnOverride column="out_item_money" property="outItemMoney" javaType="Long" jdbcType="NUMBER" />
+       <columnOverride column="enter_item_money" property="enterItemMoney" javaType="Long" jdbcType="NUMBER" />
+       <columnOverride column="TOTAL_BALANCE" property="totalBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="UNABLE_TAKECASH_BALANCE" property="unableTakecashBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="FROZEN_BALANCE" property="frozenBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="USABLE_BALANCE" property="usableBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ACCOUNT_TIME" property="accountTime" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+    <table schema="UPP" tableName="TB_UPP_BOOK_MONTH_ACCOUNT" modelType="flat" domainObjectName="AccountingMonth">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    
+    
+     <table schema="UPP" tableName="TB_UPP_CHECK_ORDER_DIVERGENCE" modelType="flat" domainObjectName="CheckOrderDivergence">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="TRADE_AMOUNT" property="tradeAmount" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="DIVERGENCE_AMOUNT" property="divergenceAmount" javaType="Long" jdbcType="NUMBER" />  
+    </table>
+    
+    <table schema="UPP" tableName="TB_UPP_CHECKORDER_HANDLE" modelType="flat" domainObjectName="UnbalanceHandlerWithBusPlatform">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="ADJUST_AMOUNT" property="adjustAmount" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+    <table schema="UPP" tableName="TB_UPP_CHECK_STORE_DIVERGENCE" modelType="flat" domainObjectName="UnbalanceDetailWithBusPlatform">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="TOTAL_BALANCE_DIVERGENCE" property="totalBalanceDivergence" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="RECHARGE_AMOUNT_DIVERGENCE" property="rechargeAmountDivergence" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="OUT_AMOUNT_DIVERGENCE" property="outAmountDivergence" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="IN_AMOUNT_DIVERGENCE" property="inAmountDivergence" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="RECHARGE_REFUNT_DIVERGENCE" property="rechargeRefuntDivergence" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="TAKE_CASH_AMOUNT_DIVERGENCE" property="takeCashAmountDivergence" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+    <table schema="UPP" tableName="TB_UPP_CKECK_ACCOUNT_MESS" modelType="flat" domainObjectName="MainWithThirdPartyAccount">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="TOTAL_BALANCE" property="totalBalance" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="OUT_AMOUNT" property="outAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="RECHARGE_AMOUNT" property="rechargeAmount" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="IN_AMOUNT" property="inAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="RECHARGE_REFUNT_AMOUNT" property="rechargeRefuntAmount" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="TAKE_CASH_AMOUNT" property="takeCashAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ADJUST_AMOUNT" property="adjustAmount" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+   
+     <table schema="UPP" tableName="TB_UPP_CHECK_ORDER_DIVERGENCE" modelType="flat" domainObjectName="CheckOrderDivergence">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="TRADE_AMOUNT" property="tradeAmount" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="DIVERGENCE_AMOUNT" property="divergenceAmount" javaType="Long" jdbcType="NUMBER" />  
+    </table>
+    <table schema="UPP" tableName="TB_UPP_STORE_CHECK_BATCH" modelType="flat" domainObjectName="UPPStoreCheckBatch">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="CHECK_ACCOUNT_TIME" property="checkAccountTime" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="OPER_TIME" property="operTime" javaType="Long" jdbcType="NUMBER" />  
+    </table>
+   
+    
+    <table schema="UPP" tableName="TB_UPP_PAY_TRADE" modelType="flat" domainObjectName="PaymentTrade">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_CONFIRM_DATE" property="payConfirmDate" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ORDER_AMOUNT" property="orderAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_POUND_SCALE" property="payPoundScale" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="BATCH_INTERNAL_NO" property="batchInternalNo" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+    </table>
+    <table schema="UPP" tableName="TB_UPP_PAY_TRADE_HISTORY" modelType="flat" domainObjectName="HPaymentTrade">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_CONFIRM_DATE" property="payConfirmDate" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ORDER_AMOUNT" property="orderAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_POUND_SCALE" property="payPoundScale" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="BATCH_INTERNAL_NO" property="batchInternalNo" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="RECORD_CREATE_TIME" property="recordCreateTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+    </table>
+    
+    
+   
+    <table schema="UPP" tableName="TB_UPP_SUB_BOOK_ACCOUNT_INFO" modelType="flat" domainObjectName="SpecialAccountDetail">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="ACCOUNT_TIME" property="accountTime" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="ACCOUNT_MONEY" property="accountMoney" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="CURRENT_MONEY" property="currentMoney" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+     <table schema="UPP" tableName="TB_UPP_BOOK_DAY_ACCOUNT" modelType="flat" domainObjectName="AccountingDay">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+     <table schema="UPP" tableName="TB_UPP_BOOK_MONTH_ACCOUNT" modelType="flat" domainObjectName="AccountingMonth">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>
+    
+    <table schema="UPP" tableName="TB_UPP_BOOK_DAY_ACCOUNT" modelType="flat" domainObjectName="AccountingDay">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+       <columnOverride column="out_item_money" property="outItemMoney" javaType="Long" jdbcType="NUMBER" />
+       <columnOverride column="enter_item_money" property="enterItemMoney" javaType="Long" jdbcType="NUMBER" />
+       <columnOverride column="TOTAL_BALANCE" property="totalBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="UNABLE_TAKECASH_BALANCE" property="unableTakecashBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="FROZEN_BALANCE" property="frozenBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="USABLE_BALANCE" property="usableBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ACCOUNT_TIME" property="accountTime" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+     <table schema="UPP" tableName="TB_UPP_PAY_TRADE" modelType="flat" domainObjectName="PaymentTrade">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_CONFIRM_DATE" property="payConfirmDate" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ORDER_AMOUNT" property="orderAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_POUND_SCALE" property="payPoundScale" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="BATCH_INTERNAL_NO" property="batchInternalNo" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+    </table>
+    <table schema="UPP" tableName="TB_UPP_PAY_TRADE_HISTORY" modelType="flat" domainObjectName="HPaymentTrade">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_CONFIRM_DATE" property="payConfirmDate" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ORDER_AMOUNT" property="orderAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="PAY_POUND_SCALE" property="payPoundScale" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="BATCH_INTERNAL_NO" property="batchInternalNo" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="RECORD_CREATE_TIME" property="recordCreateTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+    </table>
+       
+    
+    
+        
+   
+    <table schema="UPP" tableName="TB_UPP_BOOK_ACCOUNT_INFO" modelType="flat" domainObjectName="AccountDetail">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="ACCOUNT_TIME" property="accountTime" javaType="Long" jdbcType="NUMBER" />  
+      <columnOverride column="ACCOUNT_MONEY" property="accountMoney" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="CURRENT_MONEY" property="currentMoney" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+    <table schema="UPP" tableName="TB_UPP_ACCOUNT_SAFETY_MESS" modelType="flat" domainObjectName="AccountSafetyMess">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="SAFE_LEVEL" property="safeLevel" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ANSWER_ERROR_TIME" property="answerErrorTime" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+     <table schema="UPP" tableName="TB_UPP_CASH_ACCOUNT_HISTORY" modelType="flat" domainObjectName="HAccount">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="TOTAL_BALANCE" property="totalBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="UNABLE_TAKECASH_BALANCE" property="unableTakecashBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="FROZEN_BALANCE" property="frozenBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="USABLE_BALANCE" property="usableBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+      <columnOverride column="RECORD_CREATE_TIME" property="recordCreateTime" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+    <table schema="UPP" tableName="TB_UPP_CASH_ACCOUNT" modelType="flat" domainObjectName="Account">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="TOTAL_BALANCE" property="totalBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="UNABLE_TAKECASH_BALANCE" property="unableTakecashBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="FROZEN_BALANCE" property="frozenBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="USABLE_BALANCE" property="usableBalance" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+    </table>
+
+
+ <table schema="UPP" tableName="TB_UPP_PAY_ORDER_HISTORY" modelType="flat" domainObjectName="HOrderInfo">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="ORDER_AMOUNT" property="orderAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="RECORD_CREATE_TIME" property="recordCreateTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+       <columnOverride column="IDENTITY_TYPE" property="identityType" javaType="Integer" jdbcType="NUMBER" />
+    </table>
+    <table schema="UPP" tableName="TB_UPP_PAY_ORDER" modelType="flat" domainObjectName="OrderInfo">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="PAY_CONFIRM_DATE" property="payConfirmDate" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="ORDER_AMOUNT" property="orderAmount" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="CREATE_TIME" property="createTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="VERSION" property="version" javaType="Integer" jdbcType="NUMBER" />
+      <columnOverride column="IDENTITY_TYPE" property="identityType" javaType="Integer" jdbcType="NUMBER" />
+    </table>
+    
+    
+    
+    -->
+    
+    <table schema="UPP" tableName="TB_UPP_OFFLINE_TRADE_APPLY" modelType="flat" domainObjectName="OfflineRechargeApply">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="APPLY_TIME" property="applyTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="AMOUNT_ARRIVE_TIME" property="amountArriveTime" javaType="Long" jdbcType="NUMBER" />
+      <columnOverride column="TRADE_AMOUNT" property="tradeAmount" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+   <table schema="UPP" tableName="TB_UPP_OFFLINE_TRADE_VOUCHER" modelType="flat" domainObjectName="RechargeApplyVoucher">
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="VOUCHER_TIME" property="voucherTime" javaType="Long" jdbcType="NUMBER" />
+    </table>
+    
+    
+  </abatorContext>
+</abatorConfiguration>

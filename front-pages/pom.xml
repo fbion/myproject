@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.sinoiov.my</groupId>
+    <artifactId>my</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  
+  <artifactId>front-pages</artifactId>
+  <packaging>pom</packaging>
+  <version>${version.my}</version>
+  <name>Front page system </name>
+  
+  
+	<modules>  	
+	  	<module>my-interface-api</module>
+	  	<module>my-mobile-api</module>
+	  	<module>my-web-app</module>
+	  	<module>my-portal-app</module>
+  	</modules>
+  
+	<description>Front page system</description>
+</project>

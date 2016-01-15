@@ -1,0 +1,94 @@
+/*
+*下拉框样式 start
+*/
+.selectDiv {
+	float: left;
+	position: relative;
+	width: 190px;
+	margin: 0px;
+	margin-top: 2px;
+	padding: 0px;
+	border: 1px solid #d5d9de;
+	overflow-x: hidden;
+	line-height: 30px;
+	background: #fff url("../../images/common/down-angle.gif") 150px 12px no-repeat;
+}
+
+.selectDiv select {
+	float: none;
+	width: 210px;
+	height: 30px;
+	margin: 0px;
+	border: medium none;
+	background: none repeat scroll 0% 0% transparent;
+	padding-bottom/*\**/: 8px \9
+}
+/*
+*下拉框样式 end
+*/
+
+/*
+*三级联动下拉 start
+*/
+.addrselector{height:30px;position:relative;float:left;width: 290px;}
+.addrselector.zi2{z-index:2;}
+.addrselector.zi1{z-index:1;}
+.addrselector .dn{display:none;}
+.addrselector .dib{font-size:0;text-justify:inter-ideograph;}
+.addrselector .dib li{display:inline-block;vertical-align:top;*display:inline;*zoom:1;font-size:12px;}
+.addrselector dl{min-width:380px;border:1px solid #B7BCC7;position:absolute;margin:-1px 0 0 -30px;padding:8px 5px 30px;z-index:1;background:#fff;}
+.addrselector dt{border-bottom:2px solid #EDD28B;height:24px;line-height:15px;}
+.addrselector dt .tab{float:left;padding:4px 18px 4px 8px;margin-left:5px;border:1px solid #ddd;border-bottom:none;color:#005AA0;background:#fff;}
+.addrselector dt .tab i{width:7px;height:5px;margin:6px 0 0 7px;background:url(../../images/common/down-angle.gif) -1px -22px no-repeat;position:absolute;-moz-transition:all .1s ease 0s;-webkit-transition:all .1s ease 0s;transition:all .1s ease 0s;}
+.addrselector dt .tab:hover i,.addrselector dt .tab.crt i{-webkit-transform:rotate(180deg);transform:rotate(180deg);-webkit-transition:all .25s ease 0s;transition:all .25s ease 0s;}
+.addrselector dt .tab.crt{padding-bottom:6px;margin:-1px -1px 0 4px;border:2px solid #EDD28B;border-bottom:none;}
+.addrselector dd{margin-top:8px;line-height:1.8;}
+.addrselector dd li{width:75px;padding:2px 0;list-style:none;}
+.addrselector dd a{padding:2px 4px;margin:5px 2px;color:#005AA0;}
+.addrselector dd a:hover{background:#005AA0;color:#fff;}
+.addrselector .addr{height:30px;line-height:30px;padding:0 0 0 4px;border:1px solid #B4B4B4;background:#fff;position:relative;cursor:default;}
+.addrselector .addr em{min-width:260px;float:left;}
+.addrselector .addr i{width:22px;height:30px;float:left;background:#fff url(../../images/common/down-angle.gif) -14px 12px no-repeat;overflow:hidden;}
+.addrselector .addr.hover{height:24px;border-bottom:none;z-index:2;}
+.addrselector .close{width:20px;height:20px;margin:-1px 0;float:right;background: url(../../images/common/button/dialog-btns.gif) no-repeat -141px -8px;}
+.addrselector .close:hover{background-position:-141px -36px;}
+.addrselector .reset{width:30px;height:18px;margin:-3px 10px 0 0;float:right;}
+/*
+*三级联动下拉 end
+*/
+.register_frame{
+ padding:25px 25px 25px 25px;
+}
+.frame_main h3{
+ border-bottom: 2px solid #ff7200;
+ height: 35px;
+ line-height: 35px;
+ color:#ff7200;
+ font-size:14px;
+}
+.frame_title_main{
+ margin-top:25px;
+}
+.frame_title_main strong{
+ font-size:14px;
+ font-weight:bold;
+}
+.frame_title_main .st_title{
+ font-weight:500;
+}
+.frame_title_main ol{
+ list-style:none;
+}
+.frame_title_main .frame_title_ol{
+ padding:15px 15px 0px 0px; 
+}
+.frame_title_main ol li ol li{
+ text-indent:-19px;
+ line-height:25px;
+}
+.frame_title_main ol li ol  li.frame_in{
+ text-indent:0px;
+}
+.frame_title_main ol li ol {
+ padding:6px 0px 0px 35px;
+}

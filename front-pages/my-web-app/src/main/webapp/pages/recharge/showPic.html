@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图片</title>
+</head>
+<script type="text/javascript">
+	//document.write(window.parent.document.URL);
+	function init() {
+		var path = window.parent.document.URL;
+		document.getElementById('img').src = path.split("?")[1]; 
+	}
+
+</script>
+	
+<body onload="init();">
+	<img id="img" height="800" width="800" />
+</body>
+</html>

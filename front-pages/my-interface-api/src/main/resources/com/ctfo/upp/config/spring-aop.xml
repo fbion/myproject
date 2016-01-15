@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd "
+	default-lazy-init="false">
+	
+	<!-- 拦截规则: //此文件中不要加入其它的信息，否则会出现spring aop增强现象 -->
+<!-- 	<aop:config> -->
+<!-- 		<aop:pointcut id="allServiceMethod" -->
+<!-- 			expression="execution(* com.ctfo.*.*.service.*.*ServiceImpl.*(..)) -->
+<!-- 					  " /> -->
+<!-- 		<aop:pointcut id="partServiceMethod" -->
+<!-- 			expression="execution(* com.ctfo.chpt.*.service.*ServiceImpl.change*(..))  -->
+<!-- 								  ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.bind*(..)) -->
+<!-- 								  ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.unbind*(..)) -->
+<!-- 								  ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.export*(..)) -->
+<!-- 								  ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.re*(..)) -->
+<!-- 								  ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.unre*(..)) -->
+<!-- 								  ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.lock*(..)) -->
+<!-- 								  ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.unLock*(..)) -->
+<!-- 								  ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.approval*(..)) -->
+<!-- 								  ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.check*(..)) -->
+<!-- 								  ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.send*(..)) -->
+<!-- 							      ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.publish*(..)) -->
+<!-- 							      ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.if*(..)) -->
+<!-- 							      ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.import*(..)) -->
+<!-- 							      ||execution(* com.ctfo.chpt.*.service.*ServiceImpl.state*(..)) -->
+<!-- 							      ||execution(* com.ctfo.*.*.service.*ServiceImpl.add*(..)) -->
+<!-- 							      ||execution(* com.ctfo.*.*.service.*.*ServiceImpl.update*(..))  -->
+<!-- 								  ||execution(* com.ctfo.*.*.service.*.*ServiceImpl.edit*(..))  -->
+<!-- 								  ||execution(* com.ctfo.*.*.service.*.*ServiceImpl.getLoginInfo*(..))  -->
+<!-- 								  ||execution(* com.ctfo.*.*.service.*.*ServiceImpl.*Bind*(..)) -->
+<!-- 								  ||execution(* com.ctfo.*.*.service.*.*ServiceImpl.reset*(..)) -->
+<!-- 								  ||execution(* com.ctfo.*.*.service.*.*ServiceImpl.login*(..))					   -->
+<!-- 							      ||execution(* com.ctfo.*.*.service.*ServiceImpl.*Add(..)) -->
+<!-- 							      ||execution(* com.ctfo.*.*.service.*ServiceImpl.del*(..)) -->
+<!-- 							      ||execution(* com.ctfo.*.*.service.*ServiceImpl.*udit(..)) -->
+<!-- 							      ||execution(* com.ctfo.*.*.service.CardsServiceImpl.*Card(..)) -->
+<!-- 							      ||execution(* com.ctfo.chpt.*.service.PortalHomeServiceImpl.userAuthen(..)) -->
+<!-- 								  " /> -->
+<!-- 		<aop:advisor pointcut-ref="allServiceMethod" advice-ref="logAdviceHandler" /> -->
+		
+<!-- 	</aop:config> -->
+
+	<!-- 日志拦截 -->
+<!-- 	<bean id="logAdviceHandler" class="com.ctfo.csm.log.LoggerRoundAdvice"> -->
+<!-- 		<property name="system_code" value="${system.code}"></property> -->
+<!-- 		<property name="system_name" value="${system.name}"></property> -->
+<!-- 	</bean> -->
+
+</beans>

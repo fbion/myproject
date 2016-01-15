@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TB_TRADE_ORDER_EXTEND">
+
+	<resultMap id="abatorgenerated_orderInfoExtendMapResult" class="com.ctfo.payment.daox.beans.OrderInfoExtend">
+		<!-- the order table all column -->
+		<result column="orderId" jdbcType="VARCHAR" property="orderId" />
+		<result column="orderNo" jdbcType="VARCHAR" property="orderNo" />
+		<result column="orderStatus" jdbcType="VARCHAR" property="orderStatus" />
+		<result column="orderType" jdbcType="VARCHAR" property="orderType" />
+		<result column="tradeExternalNo" jdbcType="VARCHAR" property="tradeExternalNo" />
+		<result column="storeCode" jdbcType="VARCHAR" property="storeCode" />
+		<result column="accountNo" jdbcType="VARCHAR" property="accountNo" />
+		<result column="collectMoneyAccountNo" jdbcType="VARCHAR" property="collectMoneyAccountNo" />
+		<result column="workOrderNo" jdbcType="VARCHAR" property="workOrderNo" />
+		
+		<result column="orderAmount" jdbcType="VARCHAR" property="orderAmount" />
+		<result column="createTime" jdbcType="VARCHAR" property="createTime" />
+		<result column="serviceProviderCode" jdbcType="VARCHAR" property="serviceProviderCode" />
+		<result column="inOwnerLoginName" jdbcType="VARCHAR" property="inOwnerLoginName" />
+		<result column="outOwnerLoginName" jdbcType="VARCHAR" property="outOwnerLoginName" />
+		
+		<result column="userId" jdbcType="VARCHAR" property="userId" />
+		<result column="collectMoneyUserId" jdbcType="VARCHAR" property="collectMoneyUserId" />
+		<result column="clentType" jdbcType="VARCHAR" property="clentType" />
+		<result column="payChannel" jdbcType="VARCHAR" property="payChannel" />
+		<result column="productCatalog" jdbcType="VARCHAR" property="productCatalog" />
+		<result column="productName" jdbcType="VARCHAR" property="productName" />
+		<result column="clentId" jdbcType="VARCHAR" property="clentId" />
+		<result column="userUa" jdbcType="VARCHAR" property="userUa" />
+		<result column="userIp" jdbcType="VARCHAR" property="userIp" />
+		<result column="identityId" jdbcType="VARCHAR" property="identityId" />
+		<result column="identityType" jdbcType="VARCHAR" property="identityType" />
+		<result column="callbackUrl" jdbcType="VARCHAR" property="callbackUrl" />
+		<result column="fCallbackUrl" jdbcType="VARCHAR" property="fCallbackUrl" />
+		<result column="payConfirmDate" jdbcType="LONG" property="payConfirmDate" />
+		<result column="isClearing" jdbcType="VARCHAR" property="isClearing" />
+    </resultMap>
+	<sql id="queryTradeOrderSql">
+		SELECT 
+		o.ID as orderId,
+		o.ORDER_NO as orderNo,
+		o.ORDER_STATUS as orderStatus,
+		o.ORDER_TYPE as orderType,
+		o.TRADE_EXTERNAL_NO as tradeExternalNo,
+		o.STORE_CODE as storeCode,
+		o.ACCOUNT_NO as accountNo,
+		o.COLLECT_MONEY_ACCOUNT_NO as collectMoneyAccountNo,
+		o.WORK_ORDER_NO as workOrderNo,
+		
+		to_char(NVL2(o.ORDER_AMOUNT,o.ORDER_AMOUNT,0), '999999999999999999999999') as orderAmount,
+		NVL2(o.CREATE_TIME,TO_CHAR(o.CREATE_TIME/(1000 * 60 * 60 * 24)+TO_DATE('1970-01-01 08:00:00', 'YYYY-MM-DD hh24:MI:SS'),'YYYY-MM-DD hh24:MI:SS'), '') as createTime,
+		t.SERVICE_PROVIDER_CODE as serviceProviderCode,
+        in_acc.OWNER_LOGIN_NAME as inOwnerLoginName,
+        out_acc.OWNER_LOGIN_NAME as outOwnerLoginName,
+        
+        o.USER_ID as userId,
+        o.COLLECT_MONEY_USER_ID as collectMoneyUserId,
+        o.CLENT_TYPE as clentType,
+        o.PAY_CHANNEL as payChannel,
+        o.PRODUCT_CATALOG as productCatalog,
+        o.PRODUCT_NAME as productName,
+        o.CLENT_ID as clentId,
+        o.USER_UA as userUa,
+        o.USER_IP as userIp,
+        o.IDENTITY_ID as identityId,
+        o.IDENTITY_TYPE as identityType,
+        o.CALLBACK_URL as callbackUrl,
+        o.FCALLBACK_URL as fCallbackUrl,
+        NVL2(o.PAY_CONFIRM_DATE,TO_CHAR(o.PAY_CONFIRM_DATE/(1000 * 60 * 60 * 24)+TO_DATE('1970-01-01 08:00:00', 'YYYY-MM-DD hh24:MI:SS'),'YYYY-MM-DD hh24:MI:SS'), '') as payConfirmDate,
+        o.IS_CLEARING as isClearing
+		
+		FROM TB_UPP_PAY_ORDER o
+		  LEFT JOIN TB_UPP_PAY_TRADE t
+		    ON o.id = t.order_id
+		  LEFT JOIN TB_UPP_CASH_ACCOUNT in_acc
+		    ON in_acc.INSIDE_ACCOUNT_NO = o.ACCOUNT_NO
+		  LEFT JOIN TB_UPP_CASH_ACCOUNT out_acc
+		    ON out_acc.INSIDE_ACCOUNT_NO = o.COLLECT_MONEY_ACCOUNT_NO
+		<isParameterPresent >
+		<include refid="TB_TRADE_ORDER_EXTEND.abatorgenerated_paginateTradeOrder_Where_Clause" />
+      <isNotNull property="orderByClause" >
+        order by $orderByClause$  nulls last
+      </isNotNull>
+    </isParameterPresent>
+	</sql>
+	<sql id="abatorgenerated_paginateTradeOrder_Where_Clause">
+        <dynamic prepend="where">  
+			<isNotEmpty prepend="and" property="orderNo">  
+				o.ORDER_NO = #orderNo#  
+			</isNotEmpty>  
+			<isNotEmpty prepend="and" property="orderId">  
+				o.ID= #orderId#  
+			</isNotEmpty>  
+			<isNotEmpty prepend="and" property="tradeExternalNo">  
+				o.TRADE_EXTERNAL_NO = #tradeExternalNo#  
+			</isNotEmpty>  
+			<isNotEmpty prepend="and" property="orderType">    
+				o.ORDER_TYPE = #orderType#  
+			</isNotEmpty>  
+			<isNotEmpty prepend="and" property="accountNo">  
+				o.ACCOUNT_NO like '%'|| #accountNo# ||'%'
+			</isNotEmpty>  
+			<isNotEmpty prepend="and" property="collectMoneyAccountNo">  
+				o.COLLECT_MONEY_ACCOUNT_NO like '%'|| #collectMoneyAccountNo# ||'%' 
+			</isNotEmpty>  
+			<isNotEmpty prepend="and" property="orderStatus">  
+				o.ORDER_STATUS = #orderStatus#  
+			</isNotEmpty>  
+			<isNotEmpty prepend="and" property="startTime">
+				<![CDATA[ t.CREATE_TIME >= #startTime# ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="endTime">
+				<![CDATA[ t.CREATE_TIME <= #endTime# ]]>
+			</isNotEmpty>
+		</dynamic> 
+    </sql>
+    
+	<select id="queryTradeOrderList" parameterClass="java.util.Map" resultMap="abatorgenerated_orderInfoExtendMapResult" remapResults="true">
+		<include refid="Generic.oracle_Pagination_Head" />
+		<include refid="queryTradeOrderSql" />
+		<include refid="Generic.oracle_Pagination_Tail" />
+	</select>
+	<select id="queryTradeOrderExpList" parameterClass="java.util.Map" resultMap="abatorgenerated_orderInfoExtendMapResult" remapResults="true">
+		<include refid="queryTradeOrderSql" />
+	</select>
+	<select id="totalCountTradeOrderList" parameterClass="java.util.Map"
+		resultClass="int" remapResults="true">
+		select count(*) from (
+		<include refid="queryTradeOrderSql" />
+		)
+	</select>
+
+</sqlMap>

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Vendor: zjxl
+Implementation-Title: my load data service interface
+Implementation-Version: 1.0.0
+Implementation-Vendor-Id: com.sinoiov.my
+Specification-Vendor: zjxl
+Build-Jdk: 1.6.0_65
+Built-By: malongqing
+Created-By: Maven Integration for Eclipse
+Specification-Title: my load data service interface
+Specification-Version: 1.0.0
+

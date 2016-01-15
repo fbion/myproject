@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="STAT_TB_UPP_ACCOUNT_INFO">
+	
+	<sql id="queryAccountBalanceSql">	
+		select sum(t.TOTAL_BALANCE) as totalBalance, 
+		 		sum(t.UNABLE_TAKECASH_BALANCE) as unableTakecashBalance,
+    			sum(t.FROZEN_BALANCE) as frozenBalance,   
+    			sum(t.USABLE_BALANCE) as usableBalance 
+ 		 from TB_UPP_CASH_ACCOUNT t where  1=1 
+ 		 <include refid="whereAccountSql" />
+	</sql>	
+	<sql id="whereAccountSql">		 
+			<!--账户类型--> 
+			<isNotEmpty prepend="and" property="accountType">
+				<![CDATA[ t.ACCOUNT_TYPE = #accountType# ]]>
+			</isNotEmpty>
+			<!--账号--> 
+			<isNotEmpty prepend="and" property="insideAccountNo">
+				t.INSIDE_ACCOUNT_NO like '%'|| #insideAccountNo# ||'%'
+			</isNotEmpty>
+			<!--账户所属-->
+			<isNotEmpty prepend="and" property="ownerLoginName">
+				t.OWNER_LOGIN_NAME like '%'|| #ownerLoginName# ||'%'
+			</isNotEmpty>
+			<!--账户绑定手机号-->
+			<isNotEmpty prepend="and" property="mobileNo">
+				t.MOBILE_NO like '%'|| #mobileNo# ||'%'
+			</isNotEmpty>
+			<!--用户会员编码-->
+			<isNotEmpty prepend="and" property="ownerUserNo">
+				t.OWNER_USER_NO like '%'|| #ownerUserNo# ||'%'
+			</isNotEmpty>
+			<!--账户状态-->
+			<isNotEmpty prepend="and" property="accountStatus">
+				<![CDATA[ t.ACCOUNT_STATUS = #accountStatus# ]]>
+			</isNotEmpty>
+			<!--账户创建时间-->
+			<isNotEmpty prepend="and" property="startTime">
+				<![CDATA[ t.CREATE_TIME >= #startTime# ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="endTime">
+				<![CDATA[ t.CREATE_TIME <= #endTime# ]]>
+			</isNotEmpty>
+    </sql>
+    
+	<sql id="queryAccountDetailRecordedDeductionSql">
+		select sum(t.ACCOUNT_MONEY) as accountMoney from TB_UPP_BOOK_ACCOUNT_INFO t where 1=1 
+		<include refid="whereAccountBookSql" />
+	</sql>	
+    <sql id="whereAccountBookSql">
+			<!--交易开始时间-记账时间--> 
+			<isNotEmpty prepend="and" property="startTime">
+				<![CDATA[ t.ACCOUNT_TIME >= #startTime# ]]>
+			</isNotEmpty>
+			<!--交易结束时间-记账时间-->
+			<isNotEmpty prepend="and" property="endTime">
+				<![CDATA[ t.ACCOUNT_TIME <= #endTime# ]]>
+			</isNotEmpty>
+			<!--记账类型--> 
+			<isNotEmpty prepend="and" property="bookaccountType">
+				<![CDATA[ t.BOOKACCOUNT_TYPE = #bookaccountType# ]]>
+			</isNotEmpty>
+			<!--科目--> 
+			<isNotEmpty prepend="and" property="accountSubject">
+				<![CDATA[ t.ACCOUNT_SUBJECT = #accountSubject# ]]>
+			</isNotEmpty>
+			<!--账号--> 
+			<isNotEmpty prepend="and" property="insideAccountNo">
+				t.INSIDE_ACCOUNT_NO like '%'|| #insideAccountNo# ||'%'
+			</isNotEmpty>
+			<!--会员编号--> 
+			<isNotEmpty prepend="and" property="ownerUserNo">
+				t.INSIDE_ACCOUNT_NO in (select a.inside_account_no from TB_UPP_CASH_ACCOUNT a where a.owner_user_no like '%'|| #ownerUserNo# ||'%')
+			</isNotEmpty>
+    </sql>
+    
+     <!-- 账户余额统计 -->
+    <select id="sumAccountBalance"  parameterClass="java.util.HashMap" resultClass="java.util.HashMap" remapResults="true">
+		<include refid="queryAccountBalanceSql" />
+	</select>	
+	
+	  <!--账户流水统计--> 
+    <select id="sumAccountDetailRecordedDeduction"  parameterClass="java.util.HashMap" resultClass="java.util.HashMap" remapResults="true">
+		<include refid="queryAccountDetailRecordedDeductionSql" />
+	</select>
+   
+</sqlMap>

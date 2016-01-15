@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+    					http://www.springframework.org/schema/aop 
+    					http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	default-lazy-init="false">
+    
+    <bean id="defaultConfigBean" class="java.util.HashMap">
+    	<constructor-arg>
+    		<map>
+	    		<!-- <entry>
+	    			<key><value>ZJZF_CODE</value></key>
+    				<value>${ZJZF_CODE}</value>
+    			</entry>
+    			<entry>
+    				<key><value>ZJZF_PAYMENT_INCOME_ACCOUT_USERID</value></key>
+    				<value>${ZJZF_PAYMENT_INCOME_ACCOUT_USERID}</value>
+    			</entry>
+    			<entry>
+    				<key><value>ZJZF_PAYMENT_PAYOUT_ACCOUT_USERID</value></key>
+    				<value>${ZJZF_PAYMENT_PAYOUT_ACCOUT_USERID}</value>
+    			</entry>
+    			增加商户编号用于线下流程充值（即转账用的商户编号字段）
+    			<entry>
+    				<key><value>ZJZF_PAYMENT_STORE_NO</value></key>
+    				<value>${ZJZF_PAYMENT_STORE_NO}</value>
+    			</entry>
+    			<entry>
+    				<key><value>ZJZF_WITHDRAW_CASH_RAPID_INCOME_ACCOUT_USERID</value></key>
+    				<value>${ZJZF_WITHDRAW_CASH_RAPID_INCOME_ACCOUT_USERID}</value>
+    			</entry>
+    			<entry>
+    				<key><value>ZJZF_WITHDRAW_CASH_RAPID_PAYOUT_ACCOUT_USERID</value></key>
+    				<value>${ZJZF_WITHDRAW_CASH_RAPID_PAYOUT_ACCOUT_USERID}</value>
+    			</entry>
+    			根据账号查询银行信息
+    			<entry>
+    				<key><value>GET_BANK_CARD_INFO_BY_INSIDE_ACCOUNT_NO</value></key>
+    				<value>${GET_BANK_CARD_INFO_BY_INSIDE_ACCOUNT_NO}</value>
+    			</entry>
+    			账户管理-普通账户交易流水和中交账户交易流水查询SQL
+    			<entry>
+    				<key><value>ZJTYZF_ACCOUNT_TRADE_DETAIL_SQL</value></key>
+    				<value>${ZJTYZF_ACCOUNT_TRADE_DETAIL_SQL}</value>
+    			</entry>
+    			交易管理-交易订单查询SQL
+    			<entry>
+    				<key><value>ZJTYZF_TRADE_ORDER_QUERY_SQL</value></key>
+    				<value>${ZJTYZF_TRADE_ORDER_QUERY_SQL}</value>
+    			</entry>		 -->
+    		</map>
+    	</constructor-arg>
+    </bean>
+
+</beans>

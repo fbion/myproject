@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TB_UPP_BANK_CARD_INFO_EXTEND">
+  <resultMap class="com.ctfo.base.daox.beans.BankCardInfoExtend" id="generated_BankCardInfoExtendResult">
+    <!--all the TB_UPP_BANK_CARD_INFO 's column-->
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="BANK_CODE" jdbcType="VARCHAR" property="bankCode" />
+    <result column="ACCOUNT_ID" jdbcType="VARCHAR" property="accountId" />
+    <result column="PART_BANK_ACCOUNT_NO" jdbcType="VARCHAR" property="partBankAccountNo" />
+    <result column="BANK_ACCOUNT_NO" jdbcType="VARCHAR" property="bankAccountNo" />
+    <result column="BRANCH_BANK_NAME" jdbcType="VARCHAR" property="branchBankName" />
+    <result column="BRANCH_BANK_PROVINCE" jdbcType="VARCHAR" property="branchBankProvince" />
+    <result column="SUBBRANCH_BANK_NAME" jdbcType="VARCHAR" property="subbranchBankName" />
+    <result column="BRANCH_BANK_CITY" jdbcType="VARCHAR" property="branchBankCity" />
+    <result column="IS_MAIN_CARD" jdbcType="VARCHAR" property="isMainCard" />
+    <result column="AUTHENTICA_ID" jdbcType="VARCHAR" property="authenticaId" />
+    <result column="ACC_CARD_TYPE" jdbcType="VARCHAR" property="accCardType" />
+    <result column="CREATE_TIME" jdbcType="NUMBER" property="createTime" />
+    
+    <result column="IDCARD_NO" jdbcType="VARCHAR" property="idcardNo" />
+    <result column="INSIDE_ACCOUNT_NO" jdbcType="VARCHAR" property="insideAccountNo" />
+    <result column="OWNER_USER_ID" jdbcType="VARCHAR" property="ownerUserId" />
+    <result column="OWNER_LOGIN_NAME" jdbcType="VARCHAR" property="ownerLoginName" />
+    
+  </resultMap>
+  <sql id="queryBankCardInfoExtendSql">
+  		SELECT bank.ID,
+		       bank.BANK_CODE,
+		       bank.ACCOUNT_ID,
+		       bank.PART_BANK_ACCOUNT_NO,
+		       bank.BANK_ACCOUNT_NO,
+		       bank.BRANCH_BANK_NAME,
+		       bank.BRANCH_BANK_PROVINCE,
+		       bank.SUBBRANCH_BANK_NAME,
+		       bank.BRANCH_BANK_CITY,
+		       bank.IS_MAIN_CARD,
+		       bank.AUTHENTICA_ID,
+		       bank.ACC_CARD_TYPE,
+		       bank.CREATE_TIME,
+		       auth.IDCARD_NO,
+		       acc.INSIDE_ACCOUNT_NO,
+		       acc.OWNER_USER_ID,
+		       acc.OWNER_LOGIN_NAME
+		  FROM TB_UPP_BANK_CARD_INFO bank
+		  LEFT JOIN TB_UPP_AUTHENTICA_MESS auth
+		    ON auth.ACCOUNT_ID = bank.ACCOUNT_ID
+		  LEFT JOIN TB_UPP_CASH_ACCOUNT acc
+		    ON auth.ACCOUNT_ID = acc.ID
+		<include refid="TB_UPP_BANK_CARD_INFO_EXTEND.generated_paginateBankCardInfoExt_Where_Clause" />
+		ORDER BY bank.create_time DESC nulls last
+	</sql>
+	<!-- 引入where条件 -->
+	<sql id="generated_paginateBankCardInfoExt_Where_Clause">
+        <dynamic prepend="where">
+        	<!-- 银行卡主键ID -->
+        	<isNotEmpty prepend="and" property="id">    
+				bank.ID = #id#  
+			</isNotEmpty>
+			<!-- 省份 -->
+			<isNotEmpty prepend="and" property="branchBankProvince">    
+				bank.BRANCH_BANK_PROVINCE= = #branchBankProvince#  
+			</isNotEmpty>
+			<!-- 地市 -->
+			<isNotEmpty prepend="and" property="branchBankCity">    
+				bank.BRANCH_BANK_CITY = #branchBankCity#  
+			</isNotEmpty>
+        	<!--账户号-->
+        	<isNotEmpty prepend="and" property="insideAccountNo">    
+				acc.INSIDE_ACCOUNT_NO = #insideAccountNo#  
+			</isNotEmpty>
+        	<!--开户行名称 -->
+			<isNotEmpty prepend="and" property="branchBankName">    
+				bank.BRANCH_BANK_NAME= = #branchBankName#  
+			</isNotEmpty>
+			<!--卡类型 -->  
+			<isNotEmpty prepend="and" property="accCardType">  
+				bank.ACC_CARD_TYPE= #accCardType#  
+			</isNotEmpty>
+			<!--创建时间-开始--> 
+			<isNotEmpty prepend="and" property="startTime">
+				<![CDATA[ info.ACCOUNT_TIME >= #startTime# ]]>
+			</isNotEmpty>
+			<!--创建时间-结束--> 
+			<isNotEmpty prepend="and" property="endTime">
+				<![CDATA[ info.ACCOUNT_TIME <= #endTime# ]]>
+			</isNotEmpty>
+		</dynamic> 
+    </sql>
+    <!-- 根据条件查询List集合 -->
+	<select id="queryBankCardInfoExtendList" parameterClass="java.util.Map" resultMap="generated_BankCardInfoExtendResult" remapResults="true">
+		<include refid="Generic.oracle_Pagination_Head" />
+		<include refid="queryBankCardInfoExtendSql" />
+		<include refid="Generic.oracle_Pagination_Tail" />
+	</select>
+	
+	<!-- 查询总条目数 -->
+	<select id="totalCountBankCardInfoExtendList" parameterClass="java.util.Map"
+		resultClass="int" remapResults="true">
+		select count(*) from (
+		<include refid="queryBankCardInfoExtendSql" />
+		)
+	</select>
+</sqlMap>

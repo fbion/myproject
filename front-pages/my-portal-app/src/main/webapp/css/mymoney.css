@@ -1,0 +1,114 @@
+.cl{
+	clear:both;
+}
+.mymoney1, .mymoney2{
+	background: #fff;
+	border-top: 1px solid #e6e6e6;
+}
+.mymoney1{
+	height: 177px;
+}
+.mymoney2{
+	height: 536px;
+}
+.mymoney1 ul{
+	float: left;
+	height: 105px;
+	width:218px;
+	border-right:1px solid #eceeef;
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+.mymoney1 ul li{
+	padding-left:29px;
+}
+.border-r-n{
+	border-right:none !important;
+}
+.pt30{
+	padding-top: 30px;
+}
+.pt42{
+	padding-top: 42px;
+}
+.pt10{
+	padding-top: 10px;
+}
+.pb8{
+	padding-bottom: 8px;
+}
+.pb17{
+	padding-bottom: 17px;
+}
+.pb20{
+	padding-bottom: 20px;
+}
+.mymoney1 ul .fli{
+	color: #818181;
+	font-size:15.06px;
+}
+
+.f20{
+	font-size:20px;
+}
+.f28{
+	font-size: 28px;
+}
+.tjbtn1{
+	width:100px !important;
+}
+.tl{
+	text-align: left !important;
+}
+.hide{
+	display: none;
+}
+.bb-n{
+	border-bottom: none;
+}
+.menu-top{
+	height:60px;
+ line-height:60px;
+ border-bottom:1px solid #eef0f1;
+}
+.menu-title a{
+	float: left;
+ width:132px;
+ display:inline-block;
+ border:1px solid #eef0f1;
+ border-top:none;
+ font-size: 18px;
+ color: #555;
+ text-align: center;
+}
+.menu-title a.curr{
+	height: 61px;
+ color:#ff9000;
+ background: #fff;
+ border-bottom: none;
+}
+.text{
+	margin:10px;
+	padding-top:0px;
+}
+.money-tab th{
+	background: #f4f7f7 !important;
+	height: 36px !important;
+	line-height: 36px !important;
+	font-size: 12px;
+	color: #999 !important;
+	border:none !important;
+}
+.money-tab table{
+	border:none;
+}
+.red{
+	color: #e70707;
+}
+.green{
+	color:#3baa0f;
+}
+.more{
+	font-size: 14px;
+	margin-right:28px;
+}
